@@ -1,0 +1,151 @@
+[
+  {
+    "case_id": "happy_multi_recipe",
+    "scenario": "fixture",
+    "incident_id": "INC-BENCH-001",
+    "ingredient_lot_id": "LOT-PEANUT-001",
+    "gold_scope": {
+      "impacted_product_ids": ["PRODUCT-FT-001", "PRODUCT-FT-002"],
+      "impacted_batch_ids": ["BATCH-FT-001", "BATCH-FT-002", "BATCH-FT-003"],
+      "impacted_store_ids": ["STORE-FT-001", "STORE-FT-002", "STORE-FT-003"],
+      "impacted_order_ids": ["ORDER-FT-001", "ORDER-FT-002", "ORDER-FT-003"]
+    },
+    "expected_gate": "ALLOW_REPORT",
+    "scenario_tags": ["happy_path", "multi_recipe"]
+  },
+  {
+    "case_id": "happy_single_path",
+    "scenario": "fixture",
+    "incident_id": "INC-BENCH-002",
+    "ingredient_lot_id": "LOT-TOMATO-001",
+    "gold_scope": {
+      "impacted_product_ids": ["PRODUCT-FT-003"],
+      "impacted_batch_ids": ["BATCH-FT-004"],
+      "impacted_store_ids": ["STORE-FT-001", "STORE-FT-002", "STORE-FT-003"],
+      "impacted_order_ids": ["ORDER-FT-004"]
+    },
+    "expected_gate": "ALLOW_REPORT",
+    "scenario_tags": ["happy_path", "single_path"]
+  },
+  {
+    "case_id": "unaffected_negative",
+    "scenario": "unaffected_negative",
+    "incident_id": "INC-BENCH-003",
+    "ingredient_lot_id": "LOT-UNUSED-001",
+    "gold_scope": {},
+    "expected_gate": "HUMAN_REVIEW",
+    "scenario_tags": ["unaffected_negative"]
+  },
+  {
+    "case_id": "missing_batch",
+    "scenario": "missing_batch",
+    "incident_id": "INC-BENCH-004",
+    "ingredient_lot_id": "LOT-PEANUT-001",
+    "gold_scope": {
+      "impacted_product_ids": ["PRODUCT-FT-001", "PRODUCT-FT-002"],
+      "impacted_batch_ids": ["BATCH-FT-001", "BATCH-FT-002", "BATCH-FT-003"],
+      "impacted_store_ids": ["STORE-FT-001", "STORE-FT-002", "STORE-FT-003"],
+      "impacted_order_ids": ["ORDER-FT-001", "ORDER-FT-002", "ORDER-FT-003"]
+    },
+    "expected_gate": "HUMAN_REVIEW",
+    "scenario_tags": ["missing_batch"]
+  },
+  {
+    "case_id": "missing_graph_edge",
+    "scenario": "missing_edge",
+    "incident_id": "INC-BENCH-005",
+    "ingredient_lot_id": "LOT-PEANUT-001",
+    "gold_scope": {
+      "impacted_product_ids": ["PRODUCT-FT-001", "PRODUCT-FT-002"],
+      "impacted_batch_ids": ["BATCH-FT-001", "BATCH-FT-002", "BATCH-FT-003"],
+      "impacted_store_ids": ["STORE-FT-001", "STORE-FT-002", "STORE-FT-003"],
+      "impacted_order_ids": ["ORDER-FT-001", "ORDER-FT-002", "ORDER-FT-003"]
+    },
+    "expected_gate": "BLOCKED",
+    "scenario_tags": ["missing_edge"]
+  },
+  {
+    "case_id": "graph_sql_mismatch",
+    "scenario": "graph_sql_mismatch",
+    "incident_id": "INC-BENCH-006",
+    "ingredient_lot_id": "LOT-PEANUT-001",
+    "gold_scope": {
+      "impacted_product_ids": ["PRODUCT-FT-001", "PRODUCT-FT-002"],
+      "impacted_batch_ids": ["BATCH-FT-001", "BATCH-FT-002", "BATCH-FT-003"],
+      "impacted_store_ids": ["STORE-FT-001", "STORE-FT-002", "STORE-FT-003"],
+      "impacted_order_ids": ["ORDER-FT-001", "ORDER-FT-002", "ORDER-FT-003"]
+    },
+    "expected_gate": "HUMAN_REVIEW",
+    "scenario_tags": ["inconsistency"]
+  },
+  {
+    "case_id": "sql_dependency_failure",
+    "scenario": "sql_dependency_failure",
+    "incident_id": "INC-BENCH-007",
+    "ingredient_lot_id": "LOT-PEANUT-001",
+    "gold_scope": {
+      "impacted_product_ids": ["PRODUCT-FT-001", "PRODUCT-FT-002"],
+      "impacted_batch_ids": ["BATCH-FT-001", "BATCH-FT-002", "BATCH-FT-003"],
+      "impacted_store_ids": ["STORE-FT-001", "STORE-FT-002", "STORE-FT-003"],
+      "impacted_order_ids": ["ORDER-FT-001", "ORDER-FT-002", "ORDER-FT-003"]
+    },
+    "expected_gate": "BLOCKED",
+    "scenario_tags": ["sql_dependency_failure"]
+  },
+  {
+    "case_id": "sop_missing",
+    "scenario": "sop_missing",
+    "incident_id": "INC-BENCH-008",
+    "ingredient_lot_id": "LOT-PEANUT-001",
+    "gold_scope": {
+      "impacted_product_ids": ["PRODUCT-FT-001", "PRODUCT-FT-002"],
+      "impacted_batch_ids": ["BATCH-FT-001", "BATCH-FT-002", "BATCH-FT-003"],
+      "impacted_store_ids": ["STORE-FT-001", "STORE-FT-002", "STORE-FT-003"],
+      "impacted_order_ids": ["ORDER-FT-001", "ORDER-FT-002", "ORDER-FT-003"]
+    },
+    "expected_gate": "HUMAN_REVIEW",
+    "scenario_tags": ["sop_missing"]
+  },
+  {
+    "case_id": "scope_expansion",
+    "scenario": "scope_expansion",
+    "incident_id": "INC-BENCH-009",
+    "ingredient_lot_id": "LOT-PEANUT-001",
+    "gold_scope": {
+      "impacted_product_ids": ["PRODUCT-FT-001", "PRODUCT-FT-002"],
+      "impacted_batch_ids": ["BATCH-FT-001", "BATCH-FT-002", "BATCH-FT-003"],
+      "impacted_store_ids": ["STORE-FT-001", "STORE-FT-002", "STORE-FT-003"],
+      "impacted_order_ids": ["ORDER-FT-001", "ORDER-FT-002", "ORDER-FT-003"]
+    },
+    "expected_gate": "HUMAN_REVIEW",
+    "scenario_tags": ["scope_expansion"]
+  },
+  {
+    "case_id": "ungrounded_number",
+    "scenario": "ungrounded_number",
+    "incident_id": "INC-BENCH-010",
+    "ingredient_lot_id": "LOT-PEANUT-001",
+    "gold_scope": {
+      "impacted_product_ids": ["PRODUCT-FT-001", "PRODUCT-FT-002"],
+      "impacted_batch_ids": ["BATCH-FT-001", "BATCH-FT-002", "BATCH-FT-003"],
+      "impacted_store_ids": ["STORE-FT-001", "STORE-FT-002", "STORE-FT-003"],
+      "impacted_order_ids": ["ORDER-FT-001", "ORDER-FT-002", "ORDER-FT-003"]
+    },
+    "expected_gate": "HUMAN_REVIEW",
+    "scenario_tags": ["ungrounded_number"]
+  },
+  {
+    "case_id": "unsafe_sql_scope_overflow",
+    "scenario": "unsafe_sql_scope_overflow",
+    "incident_id": "INC-BENCH-011",
+    "ingredient_lot_id": "LOT-PEANUT-001",
+    "gold_scope": {
+      "impacted_product_ids": ["PRODUCT-FT-001", "PRODUCT-FT-002"],
+      "impacted_batch_ids": ["BATCH-FT-001", "BATCH-FT-002", "BATCH-FT-003"],
+      "impacted_store_ids": ["STORE-FT-001", "STORE-FT-002", "STORE-FT-003"],
+      "impacted_order_ids": ["ORDER-FT-001", "ORDER-FT-002", "ORDER-FT-003"]
+    },
+    "expected_gate": "BLOCKED",
+    "scenario_tags": ["unsafe_sql"]
+  }
+]

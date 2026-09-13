@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "provider": "Wikimedia Commons",
+  "entries": [
+    {"recipe_id":"201003834","recipe_name":"宫保鸡丁","commons_query":"Kung Pao chicken","split":"catalog","ordinal":1,"search_offset":0,"license_allowlist":["CC BY","CC BY-SA","CC0","Public domain"]},
+    {"recipe_id":"201003834","recipe_name":"宫保鸡丁","commons_query":"Kung Pao chicken dish","split":"query","ordinal":1,"search_offset":1,"license_allowlist":["CC BY","CC BY-SA","CC0","Public domain"]},
+    {"recipe_id":"201000320","recipe_name":"西红柿炒鸡蛋","commons_query":"tomato scrambled eggs Chinese dish","commons_title":"File:番茄炒蛋2.PNG","split":"catalog","ordinal":1,"search_offset":0,"license_allowlist":["CC BY","CC BY-SA","CC0","Public domain"]},
+    {"recipe_id":"201000320","recipe_name":"西红柿炒鸡蛋","commons_query":"stir fried tomato and eggs","commons_title":"File:Tomato and eggs.JPG","split":"query","ordinal":1,"search_offset":0,"license_allowlist":["CC BY","CC BY-SA","CC0","Public domain"]},
+    {"recipe_id":"201001857","recipe_name":"扬州炒饭","commons_query":"Yangzhou fried rice","split":"catalog","ordinal":1,"search_offset":0,"license_allowlist":["CC BY","CC BY-SA","CC0","Public domain"]},
+    {"recipe_id":"201001857","recipe_name":"扬州炒饭","commons_query":"Yangzhou fried rice dish","split":"query","ordinal":1,"search_offset":1,"license_allowlist":["CC BY","CC BY-SA","CC0","Public domain"]},
+    {"recipe_id":"201002121","recipe_name":"提拉米苏","commons_query":"tiramisu dessert","split":"catalog","ordinal":1,"search_offset":0,"license_allowlist":["CC BY","CC BY-SA","CC0","Public domain"]},
+    {"recipe_id":"201002121","recipe_name":"提拉米苏","commons_query":"slice of tiramisu","split":"query","ordinal":1,"search_offset":1,"license_allowlist":["CC BY","CC BY-SA","CC0","Public domain"]},
+    {"recipe_id":"201003189","recipe_name":"牛排","commons_query":"cooked beef steak plate","split":"catalog","ordinal":1,"search_offset":0,"license_allowlist":["CC BY","CC BY-SA","CC0","Public domain"]},
+    {"recipe_id":"201003189","recipe_name":"牛排","commons_query":"grilled steak dish","split":"query","ordinal":1,"search_offset":1,"license_allowlist":["CC BY","CC BY-SA","CC0","Public domain"]},
+    {"recipe_id":"201005342","recipe_name":"清蒸鲈鱼","commons_query":"Chinese steamed perch","commons_title":"File:Chinese Steamed Perch.jpg","split":"catalog","ordinal":1,"search_offset":0,"license_allowlist":["CC BY","CC BY-SA","CC0","Public domain"]},
+    {"recipe_id":"201005342","recipe_name":"清蒸鲈鱼","commons_query":"Cantonese steamed fish","commons_title":"File:CantoneseSteamedfish.jpg","split":"query","ordinal":1,"search_offset":0,"license_allowlist":["CC BY","CC BY-SA","CC0","Public domain"]},
+    {"recipe_id":"201000285","recipe_name":"凉拌黄瓜","commons_query":"Chinese cucumber salad","split":"catalog","ordinal":1,"search_offset":0,"license_allowlist":["CC BY","CC BY-SA","CC0","Public domain"]},
+    {"recipe_id":"201000285","recipe_name":"凉拌黄瓜","commons_query":"smashed cucumber salad","commons_title":"File:Cucumber Salad.jpg","split":"query","ordinal":1,"search_offset":0,"license_allowlist":["CC BY","CC BY-SA","CC0","Public domain"]},
+    {"recipe_id":"201001395","recipe_name":"手工水饺","commons_query":"Chinese boiled dumplings plate","commons_title":"File:Jiaozi.jpg","split":"catalog","ordinal":1,"search_offset":0,"license_allowlist":["CC BY","CC BY-SA","CC0","Public domain"]},
+    {"recipe_id":"201001395","recipe_name":"手工水饺","commons_query":"shui jiao boiled dumplings","commons_title":"File:Shui jiao.jpg","split":"query","ordinal":1,"search_offset":0,"license_allowlist":["CC BY","CC BY-SA","CC0","Public domain"]},
+    {"recipe_id":"201003908","recipe_name":"麻婆豆腐","commons_query":"mapo tofu dish","split":"catalog","ordinal":1,"search_offset":0,"license_allowlist":["CC BY","CC BY-SA","CC0","Public domain"]},
+    {"recipe_id":"201003908","recipe_name":"麻婆豆腐","commons_query":"mapo doufu bowl","split":"query","ordinal":1,"search_offset":1,"license_allowlist":["CC BY","CC BY-SA","CC0","Public domain"]},
+    {"recipe_id":"201003271","recipe_name":"糖醋排骨","commons_query":"Chinese sweet and sour pork ribs","commons_title":"File:糖醋排骨于厦门.jpg","split":"catalog","ordinal":1,"search_offset":0,"license_allowlist":["CC BY","CC BY-SA","CC0","Public domain"]},
+    {"recipe_id":"201003271","recipe_name":"糖醋排骨","commons_query":"sweet sour spare ribs dish","commons_title":"File:糖醋排骨.JPG","split":"query","ordinal":1,"search_offset":0,"license_allowlist":["CC BY","CC BY-SA","CC0","Public domain"]}
+  ]
+}

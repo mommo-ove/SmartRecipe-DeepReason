@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0-dev",
+  "status": "smoke_fixture",
+  "case_count": 12,
+  "cases_sha256": "7ba90d74713dc5bcf6800a1a45f54f62e66916cb5a692ea585d01e330fc55fdd",
+  "human_reviewed_count": 0,
+  "resume_metric_eligible": false,
+  "notes": "Pipeline smoke set over the 12-record development corpus. It validates evaluator wiring and must not be reported as a product quality metric."
+}

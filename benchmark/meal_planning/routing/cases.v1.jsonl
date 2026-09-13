@@ -1,0 +1,16 @@
+{"case_id":"route-001","query":"西红柿炒蛋怎么做？","expected_intent":"recipe_lookup","expected_policy":"direct"}
+{"case_id":"route-002","query":"给我推荐一道高蛋白的鸡胸肉菜谱","expected_intent":"recipe_lookup","expected_policy":"direct"}
+{"case_id":"route-003","query":"鱼香肉丝需要准备哪些食材？","expected_intent":"recipe_lookup","expected_policy":"direct"}
+{"case_id":"route-004","query":"有没有二十分钟能做完的早餐？","expected_intent":"recipe_lookup","expected_policy":"direct"}
+{"case_id":"route-005","query":"豆腐和西兰花能做什么菜？","expected_intent":"recipe_lookup","expected_policy":"direct"}
+{"case_id":"route-006","query":"帮我规划一周减脂餐","expected_intent":"meal_plan","expected_policy":"clarify"}
+{"case_id":"route-007","query":"做一个三天的高蛋白餐单","expected_intent":"meal_plan","expected_policy":"clarify"}
+{"case_id":"route-008","query":"我想每天吃得清淡一点，安排一下","expected_intent":"meal_plan","expected_policy":"clarify"}
+{"case_id":"route-009","query":"给我做七天不重样的菜单","expected_intent":"meal_plan","expected_policy":"clarify"}
+{"case_id":"route-010","query":"规划工作日的早午晚餐","expected_intent":"meal_plan","expected_policy":"clarify"}
+{"case_id":"route-011","query":"把周二晚餐换成鱼，其他不变","expected_intent":"plan_edit","expected_policy":"workflow"}
+{"case_id":"route-012","query":"周三早餐太复杂了，替换成十分钟以内的","expected_intent":"plan_edit","expected_policy":"workflow"}
+{"case_id":"route-013","query":"预算超了，只修改周末两天","expected_intent":"plan_edit","expected_policy":"workflow"}
+{"case_id":"route-014","query":"保留早餐，把午餐重新规划一下","expected_intent":"plan_edit","expected_policy":"workflow"}
+{"case_id":"route-015","query":"你好，你能做什么？","expected_intent":"general","expected_policy":"direct"}
+{"case_id":"route-016","query":"谢谢你的帮助","expected_intent":"general","expected_policy":"direct"}

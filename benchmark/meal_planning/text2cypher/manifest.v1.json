@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0-frozen",
+  "scope": "Text2Cypher generation with pre-resolved structured entities",
+  "case_count": 40,
+  "development_count": 10,
+  "test_count": 30,
+  "security_case_count": 15,
+  "cases_sha256": "2fac02ece6c893cba8f508bec70b3b495afa8e98800a3099e6d9b6d98a287592",
+  "security_cases_sha256": "31094df3e1669341c04ef8cc2a2c33a3241bdcfd595311a28e3d41a5b53cb825",
+  "dataset_sha256": "7b0feeaf02147fa555ed6947f769fb083734bab485a2bfc9d0e59b12c4bf2ef4",
+  "source_benchmark": "graph_relations/retrieval_cases.v1.jsonl",
+  "entity_extraction_in_scope": false,
+  "test_cases_allowed_in_few_shot": false
+}

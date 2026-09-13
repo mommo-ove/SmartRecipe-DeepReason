@@ -1,0 +1,39 @@
+[
+  {
+    "case_id": "allergen_peanut_001",
+    "incident": {
+      "incident_id": "INC-PEANUT-001",
+      "supplier_id": "SUP-PEANUT-001",
+      "ingredient_lot_id": "LOT-PEANUT-001",
+      "allergen": "peanut",
+      "declared_on_label": false,
+      "received_at": "2026-07-26T09:00:00Z"
+    },
+    "gold_scope": {
+      "impacted_product_ids": [
+        "PRODUCT-FT-001",
+        "PRODUCT-FT-002"
+      ],
+      "impacted_batch_ids": [
+        "BATCH-FT-001",
+        "BATCH-FT-002",
+        "BATCH-FT-003"
+      ],
+      "impacted_store_ids": [
+        "STORE-FT-001",
+        "STORE-FT-002",
+        "STORE-FT-003"
+      ],
+      "impacted_order_ids": [
+        "ORDER-FT-001",
+        "ORDER-FT-002",
+        "ORDER-FT-003"
+      ]
+    },
+    "expected_gate": "ALLOW_REPORT",
+    "scenario_tags": [
+      "happy_path",
+      "unlabeled_peanut"
+    ]
+  }
+]

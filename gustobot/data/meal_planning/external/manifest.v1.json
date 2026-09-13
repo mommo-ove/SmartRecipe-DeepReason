@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0-dev",
+  "status": "external_retrieval_fixture",
+  "source_dataset": "untitledwebsite123/food-recipes",
+  "source_url": "https://huggingface.co/datasets/untitledwebsite123/food-recipes",
+  "record_count": 300,
+  "source_rows_scanned": 4400,
+  "corpus_sha256": "7b0feeaf02147fa555ed6947f769fb083734bab485a2bfc9d0e59b12c4bf2ef4",
+  "capabilities": {
+    "retrieval_ready": 300,
+    "nutrition_ready": 300,
+    "time_ready": 300,
+    "allergen_ready": 0,
+    "budget_ready": 0,
+    "full_planning_ready": 0
+  },
+  "resume_metric_eligible": false,
+  "notes": "Public-source development corpus. Allergen and cost facts require a separate verified enrichment step before full meal-plan solving."
+}

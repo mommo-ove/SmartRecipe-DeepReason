@@ -1,0 +1,15 @@
+[project]
+name = "smartrecipe-evaluation-ui"
+version = "0.1.0"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "gradio>=5.49,<6",
+    "matplotlib>=3.10,<4",
+    "pandas>=2.3,<3",
+]
+
+[dependency-groups]
+dev = ["pytest>=7.4,<9"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

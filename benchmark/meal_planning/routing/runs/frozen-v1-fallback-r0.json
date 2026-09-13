@@ -1,0 +1,282 @@
+{
+  "router_name": "fallback",
+  "prompt_version": "r0_zero_shot",
+  "model_name": "deterministic_fallback",
+  "total": 60,
+  "intent_accuracy": 0.5666666666666667,
+  "intent_macro_f1": 0.5823284823284823,
+  "policy_accuracy": 0.6166666666666667,
+  "policy_error_rate": 0.3833333333333333,
+  "unsafe_route_rate": 0.016666666666666666,
+  "clarification_rate": 0.6,
+  "fallback_rate": 1.0,
+  "average_latency_ms": 0.05482334333161513,
+  "p95_latency_ms": 0.07200008258223534,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "estimated_cost": 0.0,
+  "errors": [
+    {
+      "case_id": "frozen-002",
+      "query": "找四道适合晚餐的鱼肉菜",
+      "expected_intent": "recipe_lookup",
+      "predicted_intent": "unknown",
+      "expected_policy": "direct",
+      "predicted_policy": "clarify",
+      "confidence": 0.55
+    },
+    {
+      "case_id": "frozen-003",
+      "query": "土豆和牛肉能搭配哪些菜？",
+      "expected_intent": "recipe_lookup",
+      "predicted_intent": "unknown",
+      "expected_policy": "direct",
+      "predicted_policy": "clarify",
+      "confidence": 0.55
+    },
+    {
+      "case_id": "frozen-004",
+      "query": "水煮肉片要准备多少食材？",
+      "expected_intent": "recipe_lookup",
+      "predicted_intent": "unknown",
+      "expected_policy": "direct",
+      "predicted_policy": "clarify",
+      "confidence": 0.55
+    },
+    {
+      "case_id": "frozen-008",
+      "query": "选三道高蛋白菜并比较蛋白质含量",
+      "expected_intent": "recipe_lookup",
+      "predicted_intent": "unknown",
+      "expected_policy": "workflow",
+      "predicted_policy": "clarify",
+      "confidence": 0.55
+    },
+    {
+      "case_id": "frozen-011",
+      "query": "数据库里一共有多少道菜？",
+      "expected_intent": "data_query",
+      "predicted_intent": "unknown",
+      "expected_policy": "direct",
+      "predicted_policy": "clarify",
+      "confidence": 0.55
+    },
+    {
+      "case_id": "frozen-016",
+      "query": "哪种主食材在菜谱中出现得最频繁",
+      "expected_intent": "data_query",
+      "predicted_intent": "recipe_lookup",
+      "expected_policy": "direct",
+      "predicted_policy": "direct",
+      "confidence": 0.8
+    },
+    {
+      "case_id": "frozen-017",
+      "query": "计算所有晚餐菜谱的热量中位数",
+      "expected_intent": "data_query",
+      "predicted_intent": "recipe_lookup",
+      "expected_policy": "direct",
+      "predicted_policy": "direct",
+      "confidence": 0.8
+    },
+    {
+      "case_id": "frozen-018",
+      "query": "30分钟以内的菜占全部菜谱多少比例",
+      "expected_intent": "data_query",
+      "predicted_intent": "recipe_lookup",
+      "expected_policy": "direct",
+      "predicted_policy": "direct",
+      "confidence": 0.8
+    },
+    {
+      "case_id": "frozen-020",
+      "query": "蛋白质最高的五道菜分别是多少克",
+      "expected_intent": "data_query",
+      "predicted_intent": "unknown",
+      "expected_policy": "direct",
+      "predicted_policy": "clarify",
+      "confidence": 0.55
+    },
+    {
+      "case_id": "frozen-025",
+      "query": "安排十四天不重样的工作餐",
+      "expected_intent": "meal_plan",
+      "predicted_intent": "unknown",
+      "expected_policy": "clarify",
+      "predicted_policy": "clarify",
+      "confidence": 0.55
+    },
+    {
+      "case_id": "frozen-026",
+      "query": "未来三天想控制在每日1650到1750千卡，蛋白质至少95克，避开花生且每顿半小时内完成",
+      "expected_intent": "meal_plan",
+      "predicted_intent": "meal_plan",
+      "expected_policy": "workflow",
+      "predicted_policy": "clarify",
+      "confidence": 0.82
+    },
+    {
+      "case_id": "frozen-029",
+      "query": "为接下来四天安排低脂饮食",
+      "expected_intent": "meal_plan",
+      "predicted_intent": "unknown",
+      "expected_policy": "clarify",
+      "predicted_policy": "clarify",
+      "confidence": 0.55
+    },
+    {
+      "case_id": "frozen-030",
+      "query": "排一个三日菜单，热量每天1700上下，蛋白质至少110克，我没有食物过敏，每餐不超过半小时",
+      "expected_intent": "meal_plan",
+      "predicted_intent": "meal_plan",
+      "expected_policy": "workflow",
+      "predicted_policy": "clarify",
+      "confidence": 0.82
+    },
+    {
+      "case_id": "frozen-032",
+      "query": "保留这份计划的早餐，重新安排午餐和晚餐",
+      "expected_intent": "plan_edit",
+      "predicted_intent": "unknown",
+      "expected_policy": "workflow",
+      "predicted_policy": "clarify",
+      "confidence": 0.55
+    },
+    {
+      "case_id": "frozen-033",
+      "query": "原菜单预算超了，只调整最后两天",
+      "expected_intent": "plan_edit",
+      "predicted_intent": "meal_plan",
+      "expected_policy": "workflow",
+      "predicted_policy": "clarify",
+      "confidence": 0.82
+    },
+    {
+      "case_id": "frozen-035",
+      "query": "昨天生成的餐单里，周三加一道汤",
+      "expected_intent": "plan_edit",
+      "predicted_intent": "meal_plan",
+      "expected_policy": "workflow",
+      "predicted_policy": "clarify",
+      "confidence": 0.82
+    },
+    {
+      "case_id": "frozen-036",
+      "query": "第二天蛋白质太低，其他天不变",
+      "expected_intent": "plan_edit",
+      "predicted_intent": "unknown",
+      "expected_policy": "workflow",
+      "predicted_policy": "clarify",
+      "confidence": 0.55
+    },
+    {
+      "case_id": "frozen-037",
+      "query": "把第一个方案改成每天不超过1800千卡",
+      "expected_intent": "plan_edit",
+      "predicted_intent": "unknown",
+      "expected_policy": "workflow",
+      "predicted_policy": "clarify",
+      "confidence": 0.55
+    },
+    {
+      "case_id": "frozen-038",
+      "query": "在刚才的周计划中删除周末两天",
+      "expected_intent": "plan_edit",
+      "predicted_intent": "unknown",
+      "expected_policy": "workflow",
+      "predicted_policy": "clarify",
+      "confidence": 0.55
+    },
+    {
+      "case_id": "frozen-043",
+      "query": "你可以提供哪些帮助？",
+      "expected_intent": "general",
+      "predicted_intent": "unknown",
+      "expected_policy": "direct",
+      "predicted_policy": "clarify",
+      "confidence": 0.55
+    },
+    {
+      "case_id": "frozen-045",
+      "query": "今天星期几",
+      "expected_intent": "general",
+      "predicted_intent": "unknown",
+      "expected_policy": "direct",
+      "predicted_policy": "clarify",
+      "confidence": 0.55
+    },
+    {
+      "case_id": "frozen-046",
+      "query": "讲个笑话吧",
+      "expected_intent": "general",
+      "predicted_intent": "unknown",
+      "expected_policy": "direct",
+      "predicted_policy": "clarify",
+      "confidence": 0.55
+    },
+    {
+      "case_id": "frozen-047",
+      "query": "你和普通搜索有什么区别",
+      "expected_intent": "general",
+      "predicted_intent": "unknown",
+      "expected_policy": "direct",
+      "predicted_policy": "clarify",
+      "confidence": 0.55
+    },
+    {
+      "case_id": "frozen-048",
+      "query": "刚刚响应有点慢",
+      "expected_intent": "general",
+      "predicted_intent": "unknown",
+      "expected_policy": "direct",
+      "predicted_policy": "clarify",
+      "confidence": 0.55
+    },
+    {
+      "case_id": "frozen-049",
+      "query": "早上好",
+      "expected_intent": "general",
+      "predicted_intent": "unknown",
+      "expected_policy": "direct",
+      "predicted_policy": "clarify",
+      "confidence": 0.55
+    },
+    {
+      "case_id": "frozen-050",
+      "query": "退出对话",
+      "expected_intent": "general",
+      "predicted_intent": "unknown",
+      "expected_policy": "direct",
+      "predicted_policy": "clarify",
+      "confidence": 0.55
+    },
+    {
+      "case_id": "frozen-053",
+      "query": "换成健康一点的",
+      "expected_intent": "unknown",
+      "predicted_intent": "plan_edit",
+      "expected_policy": "clarify",
+      "predicted_policy": "workflow",
+      "confidence": 0.86
+    },
+    {
+      "case_id": "frozen-057",
+      "query": "帮我看看有没有问题",
+      "expected_intent": "unknown",
+      "predicted_intent": "recipe_lookup",
+      "expected_policy": "clarify",
+      "predicted_policy": "direct",
+      "confidence": 0.8
+    }
+  ],
+  "created_at": "2026-08-12T13:48:48.165014+00:00",
+  "dataset_version": "1.0.0",
+  "dataset_status": "frozen_pending_human_review",
+  "dataset_sha256": "d85383d3015df65dd5eea295c53f964883cbb116b97959f2ed1eb29424f2b35d",
+  "resume_metric_eligible": false,
+  "pricing": {
+    "input_cost_per_million": 0,
+    "output_cost_per_million": 0,
+    "source": "user_supplied_cli_values"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0-dev",
+  "status": "synthetic_known_item",
+  "case_count": 30,
+  "cases_sha256": "3ab8a0b61e018d4da9562087c1728de27860f381b674f2581c872413e04855ce",
+  "human_reviewed_count": 0,
+  "resume_metric_eligible": false,
+  "notes": "Automatically generated known-item queries. Useful for regression testing, not for recommendation-quality claims."
+}

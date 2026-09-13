@@ -1,0 +1,42 @@
+{
+  "run_id": "dev-300-ablation-v1",
+  "status": "development_only_pending_human_gold_review",
+  "corpus": {
+    "source": "untitledwebsite123/food-recipes",
+    "record_count": 300,
+    "sha256": "7b0feeaf02147fa555ed6947f769fb083734bab485a2bfc9d0e59b12c4bf2ef4"
+  },
+  "benchmark": {
+    "case_count": 40,
+    "manifest_status": "awaiting_user_review",
+    "resume_metric_eligible": false
+  },
+  "configurations": {
+    "bm25": {
+      "recall@5": 0.3,
+      "recall@10": 0.425,
+      "recall@20": 0.625,
+      "mrr": 0.20377794386985562,
+      "ndcg@20": 0.2954982419757325
+    },
+    "dense_bge_m3": {
+      "recall@5": 0.5,
+      "recall@10": 0.55,
+      "recall@20": 0.65,
+      "mrr": 0.3389468864468864,
+      "ndcg@20": 0.410581765004362
+    },
+    "rrf_bm25_dense": {
+      "recall@5": 0.55,
+      "recall@10": 0.625,
+      "recall@20": 0.775,
+      "mrr": 0.31414653361344536,
+      "ndcg@20": 0.41854599112482926
+    }
+  },
+  "observations": [
+    "RRF improves Recall@20 by 0.15 absolute over the BM25 baseline.",
+    "Dense has higher MRR than RRF, so fusion weights or reranking still need study.",
+    "These metrics must not be presented as final resume results until Gold review is frozen."
+  ]
+}

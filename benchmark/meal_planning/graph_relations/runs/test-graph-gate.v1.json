@@ -1,0 +1,186 @@
+{
+  "created_at": "2026-08-14T11:35:53.218235+00:00",
+  "scope": "structured include/exclude relation retrieval",
+  "split": "test",
+  "corpus": {
+    "version": "1.0.0-dev",
+    "status": "external_retrieval_fixture",
+    "source_dataset": "untitledwebsite123/food-recipes",
+    "source_url": "https://huggingface.co/datasets/untitledwebsite123/food-recipes",
+    "record_count": 300,
+    "source_rows_scanned": 4400,
+    "corpus_sha256": "7b0feeaf02147fa555ed6947f769fb083734bab485a2bfc9d0e59b12c4bf2ef4",
+    "capabilities": {
+      "retrieval_ready": 300,
+      "nutrition_ready": 300,
+      "time_ready": 300,
+      "allergen_ready": 0,
+      "budget_ready": 0,
+      "full_planning_ready": 0
+    },
+    "resume_metric_eligible": false,
+    "notes": "Public-source development corpus. Allergen and cost facts require a separate verified enrichment step before full meal-plan solving."
+  },
+  "benchmark": {
+    "version": "1.0.0-frozen",
+    "status": "structured_relation_test",
+    "case_count": 40,
+    "cases_sha256": "964a82ad4521700e1fa339ad79b5d4d68ad311ab6fa933ed072f7d9b7de5c1c6",
+    "human_reviewed_count": 0,
+    "resume_metric_eligible": true,
+    "notes": "Gold recipe IDs are exhaustively derived from frozen structured ingredient fields. This benchmark measures include/exclude relation retrieval, not end-to-end natural-language entity extraction."
+  },
+  "model": "F:\\agent+项目\\.hf-cache\\hub\\models--BAAI--bge-m3\\snapshots\\5617a9f61b028005a4858fdac845db406aefb181",
+  "device": null,
+  "results": {
+    "rrf_with_graph_gate": {
+      "configuration": "rrf_with_graph_gate",
+      "case_count": 30,
+      "metrics": {
+        "recall@5": 1.0,
+        "recall@10": 1.0,
+        "recall@20": 1.0,
+        "mrr": 1.0,
+        "ndcg@20": 1.0
+      },
+      "ingredient_exclusion_violation@20": 0.0,
+      "latency_ms": {
+        "mean": 164.39092999886876,
+        "p50": 142.04205000714865,
+        "p95": 181.87189999880496
+      }
+    }
+  },
+  "rankings": {
+    "rrf_with_graph_gate": {
+      "graph-rel-011": [
+        "foodcom-481",
+        "foodcom-4891",
+        "foodcom-7100"
+      ],
+      "graph-rel-012": [
+        "foodcom-2836",
+        "foodcom-6565",
+        "foodcom-2984"
+      ],
+      "graph-rel-013": [
+        "foodcom-7099",
+        "foodcom-1771",
+        "foodcom-2816"
+      ],
+      "graph-rel-014": [
+        "foodcom-1266",
+        "foodcom-6866",
+        "foodcom-4567"
+      ],
+      "graph-rel-015": [
+        "foodcom-4567",
+        "foodcom-2567",
+        "foodcom-3152"
+      ],
+      "graph-rel-016": [
+        "foodcom-6681",
+        "foodcom-3256",
+        "foodcom-5139"
+      ],
+      "graph-rel-017": [
+        "foodcom-1236",
+        "foodcom-943"
+      ],
+      "graph-rel-018": [
+        "foodcom-1525",
+        "foodcom-5282"
+      ],
+      "graph-rel-019": [
+        "foodcom-920",
+        "foodcom-4567"
+      ],
+      "graph-rel-020": [
+        "foodcom-4665",
+        "foodcom-5450"
+      ],
+      "graph-rel-021": [
+        "foodcom-198",
+        "foodcom-4665"
+      ],
+      "graph-rel-022": [
+        "foodcom-2680",
+        "foodcom-4249"
+      ],
+      "graph-rel-023": [
+        "foodcom-3687",
+        "foodcom-7197"
+      ],
+      "graph-rel-024": [
+        "foodcom-4692",
+        "foodcom-6698"
+      ],
+      "graph-rel-025": [
+        "foodcom-4937",
+        "foodcom-4034"
+      ],
+      "graph-rel-026": [
+        "foodcom-3033",
+        "foodcom-4523"
+      ],
+      "graph-rel-027": [
+        "foodcom-1832",
+        "foodcom-6871"
+      ],
+      "graph-rel-028": [
+        "foodcom-1522",
+        "foodcom-338"
+      ],
+      "graph-rel-029": [
+        "foodcom-6654",
+        "foodcom-4056"
+      ],
+      "graph-rel-030": [
+        "foodcom-3516",
+        "foodcom-1267"
+      ],
+      "graph-rel-031": [
+        "foodcom-4444",
+        "foodcom-4523"
+      ],
+      "graph-rel-032": [
+        "foodcom-5474",
+        "foodcom-4854"
+      ],
+      "graph-rel-033": [
+        "foodcom-3989",
+        "foodcom-4838"
+      ],
+      "graph-rel-034": [
+        "foodcom-546",
+        "foodcom-7075"
+      ],
+      "graph-rel-035": [
+        "foodcom-3317",
+        "foodcom-5146"
+      ],
+      "graph-rel-036": [
+        "foodcom-3256",
+        "foodcom-6681"
+      ],
+      "graph-rel-037": [
+        "foodcom-3629",
+        "foodcom-4906"
+      ],
+      "graph-rel-038": [
+        "foodcom-4838",
+        "foodcom-4843"
+      ],
+      "graph-rel-039": [
+        "foodcom-4838",
+        "foodcom-327"
+      ],
+      "graph-rel-040": [
+        "foodcom-319",
+        "foodcom-6856",
+        "foodcom-6510",
+        "foodcom-536"
+      ]
+    }
+  }
+}

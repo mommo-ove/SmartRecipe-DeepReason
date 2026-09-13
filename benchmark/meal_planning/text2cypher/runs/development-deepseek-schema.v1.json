@@ -1,0 +1,1037 @@
+{
+  "created_at": "2026-08-17T15:10:09.768889+00:00",
+  "scope": "Text2Cypher generation with pre-resolved structured entities",
+  "split": "development",
+  "model": "deepseek-v4-flash",
+  "prompt_version": "meal-text2cypher-v1",
+  "benchmark": {
+    "version": "1.0.0-frozen",
+    "scope": "Text2Cypher generation with pre-resolved structured entities",
+    "case_count": 40,
+    "development_count": 10,
+    "test_count": 30,
+    "security_case_count": 15,
+    "cases_sha256": "2fac02ece6c893cba8f508bec70b3b495afa8e98800a3099e6d9b6d98a287592",
+    "security_cases_sha256": "31094df3e1669341c04ef8cc2a2c33a3241bdcfd595311a28e3d41a5b53cb825",
+    "dataset_sha256": "7b0feeaf02147fa555ed6947f769fb083734bab485a2bfc9d0e59b12c4bf2ef4",
+    "source_benchmark": "graph_relations/retrieval_cases.v1.jsonl",
+    "entity_extraction_in_scope": false,
+    "test_cases_allowed_in_few_shot": false
+  },
+  "configurations": {
+    "deepseek_schema": {
+      "configuration": "deepseek_schema",
+      "case_count": 10,
+      "template_route_accuracy": 0.0,
+      "generation_format_rate": 1.0,
+      "schema_validation_pass_rate": 1.0,
+      "explain_pass_rate": 1.0,
+      "execution_success_rate": 1.0,
+      "logical_exact_match": 1.0,
+      "repair_success_rate": 0.0,
+      "average_repair_count": 0.0,
+      "latency_ms": {
+        "mean": 21318.037459999323,
+        "p50": 20269.316749996506,
+        "p95": 34215.85376999572
+      }
+    }
+  },
+  "security": {
+    "case_count": 15,
+    "unsafe_query_rejection_rate": 1.0,
+    "issue_code_match_rate": 1.0,
+    "cases": [
+      {
+        "case_id": "text2cypher-security-001",
+        "expected_issue_codes": [
+          "UNSAFE_CLAUSE"
+        ],
+        "actual_issue_codes": [
+          "INVALID_START",
+          "UNSAFE_CLAUSE"
+        ],
+        "rejected": true
+      },
+      {
+        "case_id": "text2cypher-security-002",
+        "expected_issue_codes": [
+          "UNSAFE_CLAUSE"
+        ],
+        "actual_issue_codes": [
+          "INVALID_START",
+          "UNSAFE_CLAUSE"
+        ],
+        "rejected": true
+      },
+      {
+        "case_id": "text2cypher-security-003",
+        "expected_issue_codes": [
+          "UNSAFE_CLAUSE"
+        ],
+        "actual_issue_codes": [
+          "UNSAFE_CLAUSE"
+        ],
+        "rejected": true
+      },
+      {
+        "case_id": "text2cypher-security-004",
+        "expected_issue_codes": [
+          "UNSAFE_CLAUSE"
+        ],
+        "actual_issue_codes": [
+          "UNSAFE_CLAUSE"
+        ],
+        "rejected": true
+      },
+      {
+        "case_id": "text2cypher-security-005",
+        "expected_issue_codes": [
+          "UNSAFE_CLAUSE"
+        ],
+        "actual_issue_codes": [
+          "UNSAFE_CLAUSE"
+        ],
+        "rejected": true
+      },
+      {
+        "case_id": "text2cypher-security-006",
+        "expected_issue_codes": [
+          "UNSAFE_CLAUSE"
+        ],
+        "actual_issue_codes": [
+          "UNSAFE_CLAUSE"
+        ],
+        "rejected": true
+      },
+      {
+        "case_id": "text2cypher-security-007",
+        "expected_issue_codes": [
+          "UNSAFE_CLAUSE"
+        ],
+        "actual_issue_codes": [
+          "INVALID_START",
+          "UNSAFE_CLAUSE"
+        ],
+        "rejected": true
+      },
+      {
+        "case_id": "text2cypher-security-008",
+        "expected_issue_codes": [
+          "UNSAFE_CLAUSE"
+        ],
+        "actual_issue_codes": [
+          "INVALID_START",
+          "UNSAFE_CLAUSE"
+        ],
+        "rejected": true
+      },
+      {
+        "case_id": "text2cypher-security-009",
+        "expected_issue_codes": [
+          "UNSAFE_CLAUSE"
+        ],
+        "actual_issue_codes": [
+          "INVALID_START",
+          "UNSAFE_CLAUSE"
+        ],
+        "rejected": true
+      },
+      {
+        "case_id": "text2cypher-security-010",
+        "expected_issue_codes": [
+          "UNSAFE_CLAUSE"
+        ],
+        "actual_issue_codes": [
+          "UNSAFE_CLAUSE"
+        ],
+        "rejected": true
+      },
+      {
+        "case_id": "text2cypher-security-011",
+        "expected_issue_codes": [
+          "UNSAFE_CLAUSE"
+        ],
+        "actual_issue_codes": [
+          "INVALID_START",
+          "UNSAFE_CLAUSE"
+        ],
+        "rejected": true
+      },
+      {
+        "case_id": "text2cypher-security-012",
+        "expected_issue_codes": [
+          "MULTIPLE_STATEMENTS"
+        ],
+        "actual_issue_codes": [
+          "MULTIPLE_STATEMENTS"
+        ],
+        "rejected": true
+      },
+      {
+        "case_id": "text2cypher-security-013",
+        "expected_issue_codes": [
+          "MISSING_LIMIT"
+        ],
+        "actual_issue_codes": [
+          "MISSING_LIMIT"
+        ],
+        "rejected": true
+      },
+      {
+        "case_id": "text2cypher-security-014",
+        "expected_issue_codes": [
+          "MISSING_RECIPE_ID"
+        ],
+        "actual_issue_codes": [
+          "MISSING_RECIPE_ID"
+        ],
+        "rejected": true
+      },
+      {
+        "case_id": "text2cypher-security-015",
+        "expected_issue_codes": [
+          "LIMIT_TOO_HIGH"
+        ],
+        "actual_issue_codes": [
+          "LIMIT_TOO_HIGH"
+        ],
+        "rejected": true
+      }
+    ]
+  },
+  "raw_runs": {
+    "deepseek_schema": {
+      "text2cypher-001": {
+        "question": "Find recipes containing mozzarella cheese and parmesan cheese, but without oregano.",
+        "gold_recipe_ids": [
+          "foodcom-3166",
+          "foodcom-753",
+          "foodcom-96"
+        ],
+        "expected_route": "template",
+        "result": {
+          "question": "Find recipes containing mozzarella cheese and parmesan cheese, but without oregano.",
+          "status": "success",
+          "candidate": {
+            "statement": "MATCH (recipe:Recipe {dataset_version: $dataset_version})\nWHERE all(required_id IN $ingredient_ids WHERE (recipe)-[:HAS_INGREDIENT]->(:Ingredient {ingredient_id: required_id, dataset_version: $dataset_version}))\n  AND none(forbidden_id IN $excluded_ingredient_ids WHERE (recipe)-[:HAS_INGREDIENT]->(:Ingredient {ingredient_id: forbidden_id, dataset_version: $dataset_version}))\nRETURN recipe.recipe_id AS recipe_id\nORDER BY recipe.recipe_id\nLIMIT $top_k",
+            "parameters": {
+              "dataset_version": "1.0.0-dev",
+              "excluded_ingredient_ids": [
+                "oregano"
+              ],
+              "ingredient_ids": [
+                "mozzarella cheese",
+                "parmesan cheese"
+              ],
+              "max_minutes": null,
+              "meal_type": null,
+              "min_protein_g": null,
+              "top_k": 20
+            },
+            "source": "dynamic",
+            "template_id": null,
+            "attempt": 0
+          },
+          "validation_reports": [
+            {
+              "issues": []
+            },
+            {
+              "issues": []
+            },
+            {
+              "issues": []
+            }
+          ],
+          "execution": {
+            "status": "success",
+            "records": [
+              {
+                "recipe_id": "foodcom-3166"
+              },
+              {
+                "recipe_id": "foodcom-753"
+              },
+              {
+                "recipe_id": "foodcom-96"
+              }
+            ],
+            "selected_recipe_ids": [
+              "foodcom-3166",
+              "foodcom-753",
+              "foodcom-96"
+            ],
+            "latency_ms": 33.76759996172041,
+            "error": null
+          },
+          "selected_recipe_ids": [
+            "foodcom-3166",
+            "foodcom-753",
+            "foodcom-96"
+          ],
+          "trace": [
+            "template_route:miss:0.003ms",
+            "generate:ok:20408.039ms",
+            "validate:safety:ok:0.253ms",
+            "validate:schema:ok:0.401ms",
+            "explain:ok:295.758ms",
+            "execute:success:33.851ms"
+          ]
+        },
+        "latency_ms": 20768.361800001003,
+        "error": null
+      },
+      "text2cypher-002": {
+        "question": "Find recipes containing celery and green pepper, but without soy sauce.",
+        "gold_recipe_ids": [
+          "foodcom-4692",
+          "foodcom-4412",
+          "foodcom-3687",
+          "foodcom-7207"
+        ],
+        "expected_route": "template",
+        "result": {
+          "question": "Find recipes containing celery and green pepper, but without soy sauce.",
+          "status": "success",
+          "candidate": {
+            "statement": "MATCH (r:Recipe)-[:HAS_INGREDIENT]->(i:Ingredient)\nWHERE r.dataset_version = $dataset_version\n  AND i.dataset_version = $dataset_version\n  AND i.ingredient_id IN $ingredient_ids\n  AND NOT EXISTS {\n    MATCH (r)-[:HAS_INGREDIENT]->(excluded:Ingredient)\n    WHERE excluded.ingredient_id IN $excluded_ingredient_ids\n      AND excluded.dataset_version = $dataset_version\n  }\nWITH r, collect(DISTINCT i.ingredient_id) AS matched_ingredients\nWHERE ALL(needed IN $ingredient_ids WHERE needed IN matched_ingredients)\nRETURN r.recipe_id AS recipe_id\nLIMIT $top_k",
+            "parameters": {
+              "dataset_version": "1.0.0-dev",
+              "excluded_ingredient_ids": [
+                "soy sauce"
+              ],
+              "ingredient_ids": [
+                "celery",
+                "green pepper"
+              ],
+              "max_minutes": null,
+              "meal_type": null,
+              "min_protein_g": null,
+              "top_k": 20
+            },
+            "source": "dynamic",
+            "template_id": null,
+            "attempt": 0
+          },
+          "validation_reports": [
+            {
+              "issues": []
+            },
+            {
+              "issues": []
+            },
+            {
+              "issues": []
+            }
+          ],
+          "execution": {
+            "status": "success",
+            "records": [
+              {
+                "recipe_id": "foodcom-7207"
+              },
+              {
+                "recipe_id": "foodcom-4412"
+              },
+              {
+                "recipe_id": "foodcom-4692"
+              },
+              {
+                "recipe_id": "foodcom-3687"
+              }
+            ],
+            "selected_recipe_ids": [
+              "foodcom-7207",
+              "foodcom-4412",
+              "foodcom-4692",
+              "foodcom-3687"
+            ],
+            "latency_ms": 44.57269998965785,
+            "error": null
+          },
+          "selected_recipe_ids": [
+            "foodcom-7207",
+            "foodcom-4412",
+            "foodcom-4692",
+            "foodcom-3687"
+          ],
+          "trace": [
+            "template_route:miss:0.001ms",
+            "generate:ok:17709.071ms",
+            "validate:safety:ok:0.370ms",
+            "validate:schema:ok:0.167ms",
+            "explain:ok:184.052ms",
+            "execute:success:44.634ms"
+          ]
+        },
+        "latency_ms": 17938.37829999393,
+        "error": null
+      },
+      "text2cypher-003": {
+        "question": "Find recipes containing celery and tomatoes, but without chicken breasts.",
+        "gold_recipe_ids": [
+          "foodcom-245",
+          "foodcom-6654",
+          "foodcom-4412",
+          "foodcom-6701"
+        ],
+        "expected_route": "template",
+        "result": {
+          "question": "Find recipes containing celery and tomatoes, but without chicken breasts.",
+          "status": "success",
+          "candidate": {
+            "statement": "MATCH (r:Recipe)-[:HAS_INGREDIENT]->(i:Ingredient)\nWHERE r.dataset_version = $dataset_version\n  AND i.dataset_version = $dataset_version\n  AND i.ingredient_id IN $ingredient_ids\nWITH r, collect(DISTINCT i.ingredient_id) AS required_ingredient_ids\nWHERE all(required IN $ingredient_ids WHERE required IN required_ingredient_ids)\n  AND NOT EXISTS {\n    MATCH (r)-[:HAS_INGREDIENT]->(excluded:Ingredient)\n    WHERE excluded.dataset_version = $dataset_version\n      AND excluded.ingredient_id IN $excluded_ingredient_ids\n  }\nRETURN r.recipe_id AS recipe_id\nORDER BY r.recipe_id\nLIMIT $top_k",
+            "parameters": {
+              "dataset_version": "1.0.0-dev",
+              "excluded_ingredient_ids": [
+                "chicken breasts"
+              ],
+              "ingredient_ids": [
+                "celery",
+                "tomatoes"
+              ],
+              "max_minutes": null,
+              "meal_type": null,
+              "min_protein_g": null,
+              "top_k": 20
+            },
+            "source": "dynamic",
+            "template_id": null,
+            "attempt": 0
+          },
+          "validation_reports": [
+            {
+              "issues": []
+            },
+            {
+              "issues": []
+            },
+            {
+              "issues": []
+            }
+          ],
+          "execution": {
+            "status": "success",
+            "records": [
+              {
+                "recipe_id": "foodcom-245"
+              },
+              {
+                "recipe_id": "foodcom-4412"
+              },
+              {
+                "recipe_id": "foodcom-6654"
+              },
+              {
+                "recipe_id": "foodcom-6701"
+              }
+            ],
+            "selected_recipe_ids": [
+              "foodcom-245",
+              "foodcom-4412",
+              "foodcom-6654",
+              "foodcom-6701"
+            ],
+            "latency_ms": 37.86569996736944,
+            "error": null
+          },
+          "selected_recipe_ids": [
+            "foodcom-245",
+            "foodcom-4412",
+            "foodcom-6654",
+            "foodcom-6701"
+          ],
+          "trace": [
+            "template_route:miss:0.001ms",
+            "generate:ok:21882.904ms",
+            "validate:safety:ok:0.401ms",
+            "validate:schema:ok:0.161ms",
+            "explain:ok:182.668ms",
+            "execute:success:37.920ms"
+          ]
+        },
+        "latency_ms": 22104.1287999833,
+        "error": null
+      },
+      "text2cypher-004": {
+        "question": "Find recipes containing frozen spinach and parmesan cheese, but without mayonnaise.",
+        "gold_recipe_ids": [
+          "foodcom-2783",
+          "foodcom-621",
+          "foodcom-7089",
+          "foodcom-3288"
+        ],
+        "expected_route": "template",
+        "result": {
+          "question": "Find recipes containing frozen spinach and parmesan cheese, but without mayonnaise.",
+          "status": "success",
+          "candidate": {
+            "statement": "MATCH (r:Recipe)\nWHERE r.dataset_version = $dataset_version\n  AND all(required_ingredient IN $ingredient_ids WHERE EXISTS((r)-[:HAS_INGREDIENT]->(:Ingredient {dataset_version: $dataset_version, ingredient_id: required_ingredient})))\n  AND none(excluded_ingredient IN $excluded_ingredient_ids WHERE EXISTS((r)-[:HAS_INGREDIENT]->(:Ingredient {dataset_version: $dataset_version, ingredient_id: excluded_ingredient})))\nRETURN r.recipe_id AS recipe_id\nLIMIT $top_k",
+            "parameters": {
+              "dataset_version": "1.0.0-dev",
+              "excluded_ingredient_ids": [
+                "mayonnaise"
+              ],
+              "ingredient_ids": [
+                "frozen spinach",
+                "parmesan cheese"
+              ],
+              "max_minutes": null,
+              "meal_type": null,
+              "min_protein_g": null,
+              "top_k": 20
+            },
+            "source": "dynamic",
+            "template_id": null,
+            "attempt": 0
+          },
+          "validation_reports": [
+            {
+              "issues": []
+            },
+            {
+              "issues": []
+            },
+            {
+              "issues": []
+            }
+          ],
+          "execution": {
+            "status": "success",
+            "records": [
+              {
+                "recipe_id": "foodcom-2783"
+              },
+              {
+                "recipe_id": "foodcom-3288"
+              },
+              {
+                "recipe_id": "foodcom-621"
+              },
+              {
+                "recipe_id": "foodcom-7089"
+              }
+            ],
+            "selected_recipe_ids": [
+              "foodcom-2783",
+              "foodcom-3288",
+              "foodcom-621",
+              "foodcom-7089"
+            ],
+            "latency_ms": 30.305200023576617,
+            "error": null
+          },
+          "selected_recipe_ids": [
+            "foodcom-2783",
+            "foodcom-3288",
+            "foodcom-621",
+            "foodcom-7089"
+          ],
+          "trace": [
+            "template_route:miss:0.001ms",
+            "generate:ok:38391.532ms",
+            "validate:safety:ok:0.301ms",
+            "validate:schema:ok:0.149ms",
+            "explain:ok:219.017ms",
+            "execute:success:30.359ms"
+          ]
+        },
+        "latency_ms": 38641.428000002634,
+        "error": null
+      },
+      "text2cypher-005": {
+        "question": "Find recipes containing lemon juice and mayonnaise, but without celery.",
+        "gold_recipe_ids": [
+          "foodcom-6683",
+          "foodcom-5174",
+          "foodcom-4346",
+          "foodcom-3293"
+        ],
+        "expected_route": "template",
+        "result": {
+          "question": "Find recipes containing lemon juice and mayonnaise, but without celery.",
+          "status": "success",
+          "candidate": {
+            "statement": "MATCH (r:Recipe)\nWHERE r.dataset_version = $dataset_version\n  AND ALL(req IN $ingredient_ids WHERE EXISTS((r)-[:HAS_INGREDIENT]->(:Ingredient {ingredient_id: req, dataset_version: $dataset_version})))\n  AND NONE(ex IN $excluded_ingredient_ids WHERE EXISTS((r)-[:HAS_INGREDIENT]->(:Ingredient {ingredient_id: ex, dataset_version: $dataset_version})))\nRETURN r.recipe_id AS recipe_id\nORDER BY r.recipe_id\nLIMIT $top_k",
+            "parameters": {
+              "dataset_version": "1.0.0-dev",
+              "excluded_ingredient_ids": [
+                "celery"
+              ],
+              "ingredient_ids": [
+                "lemon juice",
+                "mayonnaise"
+              ],
+              "max_minutes": null,
+              "meal_type": null,
+              "min_protein_g": null,
+              "top_k": 20
+            },
+            "source": "dynamic",
+            "template_id": null,
+            "attempt": 0
+          },
+          "validation_reports": [
+            {
+              "issues": []
+            },
+            {
+              "issues": []
+            },
+            {
+              "issues": []
+            }
+          ],
+          "execution": {
+            "status": "success",
+            "records": [
+              {
+                "recipe_id": "foodcom-3293"
+              },
+              {
+                "recipe_id": "foodcom-4346"
+              },
+              {
+                "recipe_id": "foodcom-5174"
+              },
+              {
+                "recipe_id": "foodcom-6683"
+              }
+            ],
+            "selected_recipe_ids": [
+              "foodcom-3293",
+              "foodcom-4346",
+              "foodcom-5174",
+              "foodcom-6683"
+            ],
+            "latency_ms": 34.69180001411587,
+            "error": null
+          },
+          "selected_recipe_ids": [
+            "foodcom-3293",
+            "foodcom-4346",
+            "foodcom-5174",
+            "foodcom-6683"
+          ],
+          "trace": [
+            "template_route:miss:0.001ms",
+            "generate:ok:19523.715ms",
+            "validate:safety:ok:0.277ms",
+            "validate:schema:ok:0.128ms",
+            "explain:ok:211.314ms",
+            "execute:success:34.760ms"
+          ]
+        },
+        "latency_ms": 19770.27169999201,
+        "error": null
+      },
+      "text2cypher-006": {
+        "question": "Find recipes containing margarine and parmesan cheese, but without nutmeg.",
+        "gold_recipe_ids": [
+          "foodcom-3166",
+          "foodcom-4641",
+          "foodcom-4205",
+          "foodcom-3624"
+        ],
+        "expected_route": "template",
+        "result": {
+          "question": "Find recipes containing margarine and parmesan cheese, but without nutmeg.",
+          "status": "success",
+          "candidate": {
+            "statement": "MATCH (r:Recipe)-[:HAS_INGREDIENT]->(i:Ingredient)\nWHERE r.dataset_version = $dataset_version\n  AND i.dataset_version = $dataset_version\n  AND i.ingredient_id IN $ingredient_ids\nWITH r, collect(DISTINCT i.ingredient_id) AS present_ingredients\nWHERE all(required_ingredient IN $ingredient_ids WHERE required_ingredient IN present_ingredients)\nOPTIONAL MATCH (r)-[:HAS_INGREDIENT]->(excluded:Ingredient)\nWHERE excluded.dataset_version = $dataset_version\n  AND excluded.ingredient_id IN $excluded_ingredient_ids\nWITH r, count(excluded) AS excluded_count\nWHERE excluded_count = 0\nRETURN r.recipe_id AS recipe_id\nLIMIT $top_k",
+            "parameters": {
+              "dataset_version": "1.0.0-dev",
+              "excluded_ingredient_ids": [
+                "nutmeg"
+              ],
+              "ingredient_ids": [
+                "margarine",
+                "parmesan cheese"
+              ],
+              "max_minutes": null,
+              "meal_type": null,
+              "min_protein_g": null,
+              "top_k": 20
+            },
+            "source": "dynamic",
+            "template_id": null,
+            "attempt": 0
+          },
+          "validation_reports": [
+            {
+              "issues": []
+            },
+            {
+              "issues": []
+            },
+            {
+              "issues": []
+            }
+          ],
+          "execution": {
+            "status": "success",
+            "records": [
+              {
+                "recipe_id": "foodcom-4641"
+              },
+              {
+                "recipe_id": "foodcom-4205"
+              },
+              {
+                "recipe_id": "foodcom-3624"
+              },
+              {
+                "recipe_id": "foodcom-3166"
+              }
+            ],
+            "selected_recipe_ids": [
+              "foodcom-4641",
+              "foodcom-4205",
+              "foodcom-3624",
+              "foodcom-3166"
+            ],
+            "latency_ms": 32.75979997124523,
+            "error": null
+          },
+          "selected_recipe_ids": [
+            "foodcom-4641",
+            "foodcom-4205",
+            "foodcom-3624",
+            "foodcom-3166"
+          ],
+          "trace": [
+            "template_route:miss:0.001ms",
+            "generate:ok:26252.219ms",
+            "validate:safety:ok:0.324ms",
+            "validate:schema:ok:0.143ms",
+            "explain:ok:238.889ms",
+            "execute:success:32.811ms"
+          ]
+        },
+        "latency_ms": 26524.454600003082,
+        "error": null
+      },
+      "text2cypher-007": {
+        "question": "Find recipes containing carrot and celery, but without cabbage.",
+        "gold_recipe_ids": [
+          "foodcom-4168",
+          "foodcom-319",
+          "foodcom-2366"
+        ],
+        "expected_route": "template",
+        "result": {
+          "question": "Find recipes containing carrot and celery, but without cabbage.",
+          "status": "success",
+          "candidate": {
+            "statement": "MATCH (r:Recipe)-[:HAS_INGREDIENT]->(i:Ingredient)\nWHERE r.dataset_version = $dataset_version\n  AND i.dataset_version = $dataset_version\n  AND i.ingredient_id IN $ingredient_ids\nWITH r, count(DISTINCT i.ingredient_id) AS matched_ingredient_count\nWHERE matched_ingredient_count = size($ingredient_ids)\n  AND NOT EXISTS {\n    MATCH (r)-[:HAS_INGREDIENT]->(excluded:Ingredient)\n    WHERE excluded.dataset_version = $dataset_version\n      AND excluded.ingredient_id IN $excluded_ingredient_ids\n  }\nRETURN r.recipe_id AS recipe_id\nORDER BY r.recipe_id\nLIMIT $top_k",
+            "parameters": {
+              "dataset_version": "1.0.0-dev",
+              "excluded_ingredient_ids": [
+                "cabbage"
+              ],
+              "ingredient_ids": [
+                "carrot",
+                "celery"
+              ],
+              "max_minutes": null,
+              "meal_type": null,
+              "min_protein_g": null,
+              "top_k": 20
+            },
+            "source": "dynamic",
+            "template_id": null,
+            "attempt": 0
+          },
+          "validation_reports": [
+            {
+              "issues": []
+            },
+            {
+              "issues": []
+            },
+            {
+              "issues": []
+            }
+          ],
+          "execution": {
+            "status": "success",
+            "records": [
+              {
+                "recipe_id": "foodcom-2366"
+              },
+              {
+                "recipe_id": "foodcom-319"
+              },
+              {
+                "recipe_id": "foodcom-4168"
+              }
+            ],
+            "selected_recipe_ids": [
+              "foodcom-2366",
+              "foodcom-319",
+              "foodcom-4168"
+            ],
+            "latency_ms": 29.692100011743605,
+            "error": null
+          },
+          "selected_recipe_ids": [
+            "foodcom-2366",
+            "foodcom-319",
+            "foodcom-4168"
+          ],
+          "trace": [
+            "template_route:miss:0.001ms",
+            "generate:ok:28622.581ms",
+            "validate:safety:ok:0.373ms",
+            "validate:schema:ok:0.165ms",
+            "explain:ok:153.879ms",
+            "execute:success:29.748ms"
+          ]
+        },
+        "latency_ms": 28806.81859998731,
+        "error": null
+      },
+      "text2cypher-008": {
+        "question": "Find recipes containing carrots and celery, but without chicken breasts.",
+        "gold_recipe_ids": [
+          "foodcom-4891",
+          "foodcom-481",
+          "foodcom-5282"
+        ],
+        "expected_route": "template",
+        "result": {
+          "question": "Find recipes containing carrots and celery, but without chicken breasts.",
+          "status": "success",
+          "candidate": {
+            "statement": "MATCH (r:Recipe {dataset_version: $dataset_version})-[:HAS_INGREDIENT]->(i:Ingredient {dataset_version: $dataset_version})\nWHERE i.ingredient_id IN $ingredient_ids\nWITH r, count(DISTINCT i) AS required_count\nWHERE required_count = size($ingredient_ids)\nOPTIONAL MATCH (r)-[:HAS_INGREDIENT]->(ex:Ingredient {dataset_version: $dataset_version})\nWHERE ex.ingredient_id IN $excluded_ingredient_ids\nWITH r, count(ex) AS excluded_count\nWHERE excluded_count = 0\nRETURN r.recipe_id AS recipe_id\nORDER BY r.recipe_id\nLIMIT $top_k",
+            "parameters": {
+              "dataset_version": "1.0.0-dev",
+              "excluded_ingredient_ids": [
+                "chicken breasts"
+              ],
+              "ingredient_ids": [
+                "carrots",
+                "celery"
+              ],
+              "max_minutes": null,
+              "meal_type": null,
+              "min_protein_g": null,
+              "top_k": 20
+            },
+            "source": "dynamic",
+            "template_id": null,
+            "attempt": 0
+          },
+          "validation_reports": [
+            {
+              "issues": []
+            },
+            {
+              "issues": []
+            },
+            {
+              "issues": []
+            }
+          ],
+          "execution": {
+            "status": "success",
+            "records": [
+              {
+                "recipe_id": "foodcom-481"
+              },
+              {
+                "recipe_id": "foodcom-4891"
+              },
+              {
+                "recipe_id": "foodcom-5282"
+              }
+            ],
+            "selected_recipe_ids": [
+              "foodcom-481",
+              "foodcom-4891",
+              "foodcom-5282"
+            ],
+            "latency_ms": 28.47970003494993,
+            "error": null
+          },
+          "selected_recipe_ids": [
+            "foodcom-481",
+            "foodcom-4891",
+            "foodcom-5282"
+          ],
+          "trace": [
+            "template_route:miss:0.001ms",
+            "generate:ok:14606.024ms",
+            "validate:safety:ok:0.276ms",
+            "validate:schema:ok:0.131ms",
+            "explain:ok:140.933ms",
+            "execute:success:28.534ms"
+          ]
+        },
+        "latency_ms": 14775.968100002501,
+        "error": null
+      },
+      "text2cypher-009": {
+        "question": "Find recipes containing carrots and onions, but without chicken breasts.",
+        "gold_recipe_ids": [
+          "foodcom-3061",
+          "foodcom-4891",
+          "foodcom-481"
+        ],
+        "expected_route": "template",
+        "result": {
+          "question": "Find recipes containing carrots and onions, but without chicken breasts.",
+          "status": "success",
+          "candidate": {
+            "statement": "MATCH (r:Recipe)-[:HAS_INGREDIENT]->(i:Ingredient)\nWHERE r.dataset_version = $dataset_version\n  AND i.dataset_version = $dataset_version\n  AND i.ingredient_id IN $ingredient_ids\n  AND NOT EXISTS {\n    MATCH (r)-[:HAS_INGREDIENT]->(ex:Ingredient)\n    WHERE ex.dataset_version = $dataset_version\n      AND ex.ingredient_id IN $excluded_ingredient_ids\n  }\nWITH r, COUNT(DISTINCT i) AS matched_ingredients\nWHERE matched_ingredients = size($ingredient_ids)\nRETURN r.recipe_id AS recipe_id\nORDER BY r.recipe_id\nLIMIT $top_k",
+            "parameters": {
+              "dataset_version": "1.0.0-dev",
+              "excluded_ingredient_ids": [
+                "chicken breasts"
+              ],
+              "ingredient_ids": [
+                "carrots",
+                "onions"
+              ],
+              "max_minutes": null,
+              "meal_type": null,
+              "min_protein_g": null,
+              "top_k": 20
+            },
+            "source": "dynamic",
+            "template_id": null,
+            "attempt": 0
+          },
+          "validation_reports": [
+            {
+              "issues": []
+            },
+            {
+              "issues": []
+            },
+            {
+              "issues": []
+            }
+          ],
+          "execution": {
+            "status": "success",
+            "records": [
+              {
+                "recipe_id": "foodcom-3061"
+              },
+              {
+                "recipe_id": "foodcom-481"
+              },
+              {
+                "recipe_id": "foodcom-4891"
+              }
+            ],
+            "selected_recipe_ids": [
+              "foodcom-3061",
+              "foodcom-481",
+              "foodcom-4891"
+            ],
+            "latency_ms": 33.006499987095594,
+            "error": null
+          },
+          "selected_recipe_ids": [
+            "foodcom-3061",
+            "foodcom-481",
+            "foodcom-4891"
+          ],
+          "trace": [
+            "template_route:miss:0.001ms",
+            "generate:ok:12324.286ms",
+            "validate:safety:ok:0.274ms",
+            "validate:schema:ok:0.132ms",
+            "explain:ok:242.553ms",
+            "execute:success:33.062ms"
+          ]
+        },
+        "latency_ms": 12600.376499991398,
+        "error": null
+      },
+      "text2cypher-010": {
+        "question": "Find recipes containing celery and mayonnaise, but without lemon juice.",
+        "gold_recipe_ids": [
+          "foodcom-3409",
+          "foodcom-6701",
+          "foodcom-6914"
+        ],
+        "expected_route": "template",
+        "result": {
+          "question": "Find recipes containing celery and mayonnaise, but without lemon juice.",
+          "status": "success",
+          "candidate": {
+            "statement": "MATCH (r:Recipe)\nWHERE r.dataset_version = $dataset_version\n  AND all(req IN $ingredient_ids WHERE EXISTS((r)-[:HAS_INGREDIENT]->(:Ingredient {ingredient_id: req, dataset_version: $dataset_version})))\n  AND none(ex IN $excluded_ingredient_ids WHERE EXISTS((r)-[:HAS_INGREDIENT]->(:Ingredient {ingredient_id: ex, dataset_version: $dataset_version})))\nRETURN r.recipe_id AS recipe_id\nLIMIT $top_k",
+            "parameters": {
+              "dataset_version": "1.0.0-dev",
+              "excluded_ingredient_ids": [
+                "lemon juice"
+              ],
+              "ingredient_ids": [
+                "celery",
+                "mayonnaise"
+              ],
+              "max_minutes": null,
+              "meal_type": null,
+              "min_protein_g": null,
+              "top_k": 20
+            },
+            "source": "dynamic",
+            "template_id": null,
+            "attempt": 0
+          },
+          "validation_reports": [
+            {
+              "issues": []
+            },
+            {
+              "issues": []
+            },
+            {
+              "issues": []
+            }
+          ],
+          "execution": {
+            "status": "success",
+            "records": [
+              {
+                "recipe_id": "foodcom-3409"
+              },
+              {
+                "recipe_id": "foodcom-6701"
+              },
+              {
+                "recipe_id": "foodcom-6914"
+              }
+            ],
+            "selected_recipe_ids": [
+              "foodcom-3409",
+              "foodcom-6701",
+              "foodcom-6914"
+            ],
+            "latency_ms": 35.26109998347238,
+            "error": null
+          },
+          "selected_recipe_ids": [
+            "foodcom-3409",
+            "foodcom-6701",
+            "foodcom-6914"
+          ],
+          "trace": [
+            "template_route:miss:0.001ms",
+            "generate:ok:11003.061ms",
+            "validate:safety:ok:0.220ms",
+            "validate:schema:ok:0.125ms",
+            "explain:ok:211.395ms",
+            "execute:success:35.315ms"
+          ]
+        },
+        "latency_ms": 11250.188200036064,
+        "error": null
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "status": "frozen_pending_human_review",
+  "record_count": 60,
+  "cases_sha256": "d85383d3015df65dd5eea295c53f964883cbb116b97959f2ed1eb29424f2b35d",
+  "resume_metric_eligible": false,
+  "human_reviewer": null,
+  "notes": "Frozen before model evaluation. Labels require independent human review before resume metrics are allowed. Do not tune prompts or fallback rules on this set."
+}

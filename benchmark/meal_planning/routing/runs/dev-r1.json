@@ -1,0 +1,48 @@
+{
+  "router_name": "llm",
+  "prompt_version": "r1_few_shot",
+  "model_name": "deepseek-v4-flash",
+  "total": 43,
+  "intent_accuracy": 1.0,
+  "intent_macro_f1": 1.0,
+  "policy_accuracy": 0.9534883720930233,
+  "policy_error_rate": 0.046511627906976716,
+  "unsafe_route_rate": 0.0,
+  "clarification_rate": 0.3023255813953488,
+  "fallback_rate": 0.0,
+  "average_latency_ms": 1465.9597325398652,
+  "p95_latency_ms": 2456.784500274807,
+  "input_tokens": 33859,
+  "output_tokens": 5225,
+  "estimated_cost": 0.00620326,
+  "errors": [
+    {
+      "case_id": "test-004",
+      "query": "有没有热量低一点的晚餐推荐？",
+      "expected_intent": "recipe_lookup",
+      "predicted_intent": "recipe_lookup",
+      "expected_policy": "direct",
+      "predicted_policy": "workflow",
+      "confidence": 0.85
+    },
+    {
+      "case_id": "test-006",
+      "query": "推荐三道菜，不要花生，半小时内做好",
+      "expected_intent": "recipe_lookup",
+      "predicted_intent": "recipe_lookup",
+      "expected_policy": "direct",
+      "predicted_policy": "workflow",
+      "confidence": 0.9
+    }
+  ],
+  "created_at": "2026-08-12T15:11:01.659732+00:00",
+  "dataset_version": "development-v2",
+  "dataset_status": "iteration_development_only",
+  "dataset_sha256": "bdd0b8cf0a7775b8aa29794a7ac55adb3e507a4bbed0ab8fa758142fbbb6cd52",
+  "resume_metric_eligible": false,
+  "pricing": {
+    "input_cost_per_million": 0.14,
+    "output_cost_per_million": 0.28,
+    "source": "user_supplied_cli_values"
+  }
+}

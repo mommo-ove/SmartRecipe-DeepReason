@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0-frozen",
+  "status": "structured_relation_test",
+  "case_count": 40,
+  "cases_sha256": "964a82ad4521700e1fa339ad79b5d4d68ad311ab6fa933ed072f7d9b7de5c1c6",
+  "human_reviewed_count": 0,
+  "resume_metric_eligible": true,
+  "notes": "Gold recipe IDs are exhaustively derived from frozen structured ingredient fields. This benchmark measures include/exclude relation retrieval, not end-to-end natural-language entity extraction."
+}

@@ -1,0 +1,8 @@
+{
+  "version": "1.0.0-dev",
+  "status": "development_fixture",
+  "record_count": 12,
+  "recipes_sha256": "63848d072044a141dba556573a0fe2be5d020a1ddacb9565f1063881569ef363",
+  "human_reviewer": null,
+  "notes": "Synthetic development fixtures for deterministic solver tests; not benchmark or production nutrition data."
+}

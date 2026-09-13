@@ -1,0 +1,84 @@
+{
+  "router_name": "llm",
+  "prompt_version": "r0_zero_shot",
+  "model_name": "deepseek-v4-flash",
+  "total": 43,
+  "intent_accuracy": 0.9302325581395349,
+  "intent_macro_f1": 0.8901098901098902,
+  "policy_accuracy": 0.9069767441860465,
+  "policy_error_rate": 0.09302325581395354,
+  "unsafe_route_rate": 0.023255813953488372,
+  "clarification_rate": 0.27906976744186046,
+  "fallback_rate": 0.0,
+  "average_latency_ms": 1447.7191046421785,
+  "p95_latency_ms": 2255.4067000746727,
+  "input_tokens": 29516,
+  "output_tokens": 5294,
+  "estimated_cost": 0.00561456,
+  "errors": [
+    {
+      "case_id": "dev-005",
+      "query": "查一道二十分钟内能完成的早餐",
+      "expected_intent": "recipe_lookup",
+      "predicted_intent": "recipe_lookup",
+      "expected_policy": "direct",
+      "predicted_policy": "workflow",
+      "confidence": 0.9
+    },
+    {
+      "case_id": "dev-016",
+      "query": "我最近总觉得吃得不太对",
+      "expected_intent": "unknown",
+      "predicted_intent": "general",
+      "expected_policy": "clarify",
+      "predicted_policy": "clarify",
+      "confidence": 0.6
+    },
+    {
+      "case_id": "test-004",
+      "query": "有没有热量低一点的晚餐推荐？",
+      "expected_intent": "recipe_lookup",
+      "predicted_intent": "recipe_lookup",
+      "expected_policy": "direct",
+      "predicted_policy": "workflow",
+      "confidence": 0.9
+    },
+    {
+      "case_id": "test-006",
+      "query": "推荐三道菜，不要花生，半小时内做好",
+      "expected_intent": "recipe_lookup",
+      "predicted_intent": "recipe_lookup",
+      "expected_policy": "direct",
+      "predicted_policy": "workflow",
+      "confidence": 0.9
+    },
+    {
+      "case_id": "test-021",
+      "query": "我应该怎么吃？",
+      "expected_intent": "unknown",
+      "predicted_intent": "general",
+      "expected_policy": "clarify",
+      "predicted_policy": "clarify",
+      "confidence": 0.6
+    },
+    {
+      "case_id": "test-024",
+      "query": "我有点饿了",
+      "expected_intent": "unknown",
+      "predicted_intent": "general",
+      "expected_policy": "clarify",
+      "predicted_policy": "direct",
+      "confidence": 0.7
+    }
+  ],
+  "created_at": "2026-08-12T15:09:11.633152+00:00",
+  "dataset_version": "development-v2",
+  "dataset_status": "iteration_development_only",
+  "dataset_sha256": "bdd0b8cf0a7775b8aa29794a7ac55adb3e507a4bbed0ab8fa758142fbbb6cd52",
+  "resume_metric_eligible": false,
+  "pricing": {
+    "input_cost_per_million": 0.14,
+    "output_cost_per_million": 0.28,
+    "source": "user_supplied_cli_values"
+  }
+}

@@ -1,0 +1,1077 @@
+{
+  "case_set_version": "foodtrace-benchmark-v1",
+  "case_set_sha256": "3108155511a3094c12c74d841d843d766dc2cfdbe514f2c08d7c5e7af55a334c",
+  "total_cases": 11,
+  "metrics": {
+    "impacted_batch_precision": 1.0,
+    "impacted_batch_recall": 0.4643,
+    "impacted_order_recall": 0.3571,
+    "false_negative_rate": 0.5357,
+    "evidence_coverage": 0.9524,
+    "inconsistency_gate_recall": 1.0,
+    "unsafe_sql_block_rate": 1.0,
+    "end_to_end_success_rate": 1.0,
+    "p50_runtime_ms": 0.4943,
+    "p95_runtime_ms": 1.4022
+  },
+  "metric_counts": {
+    "impacted_batch_precision": {
+      "numerator": 13,
+      "denominator": 13,
+      "definition": "gold impacted batches among all predicted impacted batches"
+    },
+    "impacted_batch_recall": {
+      "numerator": 13,
+      "denominator": 28,
+      "definition": "recovered impacted batches across every case with Gold"
+    },
+    "impacted_order_recall": {
+      "numerator": 10,
+      "denominator": 28,
+      "definition": "recovered impacted orders across every case with Gold"
+    },
+    "false_negative_rate": {
+      "numerator": 15,
+      "denominator": 28,
+      "definition": "missed Gold batches across every case with Gold"
+    },
+    "evidence_coverage": {
+      "numerator": 20,
+      "denominator": 21,
+      "definition": "claims supported by matching evidence kind and payload value"
+    },
+    "inconsistency_gate_recall": {
+      "numerator": 1,
+      "denominator": 1,
+      "definition": "inconsistency-tagged cases routed to HUMAN_REVIEW"
+    },
+    "unsafe_sql_block_rate": {
+      "numerator": 1,
+      "denominator": 1,
+      "definition": "unsafe-SQL-tagged cases stopped before a report"
+    },
+    "end_to_end_success_rate": {
+      "numerator": 11,
+      "denominator": 11,
+      "definition": "cases matching expected gate and report scope"
+    },
+    "p50_runtime_ms": {
+      "numerator": null,
+      "denominator": 11,
+      "definition": "nearest-rank p50 over per-case runtime milliseconds"
+    },
+    "p95_runtime_ms": {
+      "numerator": null,
+      "denominator": 11,
+      "definition": "nearest-rank p95 over per-case runtime milliseconds"
+    }
+  },
+  "cases": [
+    {
+      "case_id": "happy_multi_recipe",
+      "scenario": "fixture",
+      "scenario_tags": [
+        "happy_path",
+        "multi_recipe"
+      ],
+      "expected_gate": "ALLOW_REPORT",
+      "actual_gate": "ALLOW_REPORT",
+      "gate_reasons": [],
+      "gold_scope": {
+        "impacted_product_ids": [
+          "PRODUCT-FT-001",
+          "PRODUCT-FT-002"
+        ],
+        "impacted_batch_ids": [
+          "BATCH-FT-001",
+          "BATCH-FT-002",
+          "BATCH-FT-003"
+        ],
+        "impacted_store_ids": [
+          "STORE-FT-001",
+          "STORE-FT-002",
+          "STORE-FT-003"
+        ],
+        "impacted_order_ids": [
+          "ORDER-FT-001",
+          "ORDER-FT-002",
+          "ORDER-FT-003"
+        ]
+      },
+      "actual_scope": {
+        "impacted_product_ids": [
+          "PRODUCT-FT-001",
+          "PRODUCT-FT-002"
+        ],
+        "impacted_batch_ids": [
+          "BATCH-FT-001",
+          "BATCH-FT-002",
+          "BATCH-FT-003"
+        ],
+        "impacted_store_ids": [
+          "STORE-FT-001",
+          "STORE-FT-002",
+          "STORE-FT-003"
+        ],
+        "impacted_order_ids": [
+          "ORDER-FT-001",
+          "ORDER-FT-002",
+          "ORDER-FT-003"
+        ]
+      },
+      "claims": [
+        {
+          "metric": "impacted_product_count",
+          "value": 2,
+          "evidence_ids": [
+            "EVD-e47a3952d66bc191"
+          ]
+        },
+        {
+          "metric": "impacted_batch_count",
+          "value": 3,
+          "evidence_ids": [
+            "EVD-e47a3952d66bc191"
+          ]
+        },
+        {
+          "metric": "impacted_store_count",
+          "value": 3,
+          "evidence_ids": [
+            "EVD-9c02a21d7053fdb0"
+          ]
+        },
+        {
+          "metric": "impacted_order_count",
+          "value": 3,
+          "evidence_ids": [
+            "EVD-9c02a21d7053fdb0"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "EVD-c3e294c9f15a5be5",
+          "kind": "incident_notice",
+          "source": "incident_parser"
+        },
+        {
+          "evidence_id": "EVD-b976deecf5bd96b1",
+          "kind": "sop_procedure",
+          "source": "sop_repository"
+        },
+        {
+          "evidence_id": "EVD-e47a3952d66bc191",
+          "kind": "graph_scope",
+          "source": "graph_repository"
+        },
+        {
+          "evidence_id": "EVD-9c02a21d7053fdb0",
+          "kind": "order_exposure",
+          "source": "exposure_repository"
+        },
+        {
+          "evidence_id": "EVD-68cb778eb6835ca6",
+          "kind": "consistency_review",
+          "source": "python"
+        },
+        {
+          "evidence_id": "EVD-95008a7e90b60b7b",
+          "kind": "decision_gate",
+          "source": "python"
+        }
+      ],
+      "evidence_ids": [
+        "EVD-68cb778eb6835ca6",
+        "EVD-95008a7e90b60b7b",
+        "EVD-9c02a21d7053fdb0",
+        "EVD-b976deecf5bd96b1",
+        "EVD-c3e294c9f15a5be5",
+        "EVD-e47a3952d66bc191"
+      ],
+      "runtime_ms": 1.4022,
+      "passed": true
+    },
+    {
+      "case_id": "happy_single_path",
+      "scenario": "fixture",
+      "scenario_tags": [
+        "happy_path",
+        "single_path"
+      ],
+      "expected_gate": "ALLOW_REPORT",
+      "actual_gate": "ALLOW_REPORT",
+      "gate_reasons": [],
+      "gold_scope": {
+        "impacted_product_ids": [
+          "PRODUCT-FT-003"
+        ],
+        "impacted_batch_ids": [
+          "BATCH-FT-004"
+        ],
+        "impacted_store_ids": [
+          "STORE-FT-001",
+          "STORE-FT-002",
+          "STORE-FT-003"
+        ],
+        "impacted_order_ids": [
+          "ORDER-FT-004"
+        ]
+      },
+      "actual_scope": {
+        "impacted_product_ids": [
+          "PRODUCT-FT-003"
+        ],
+        "impacted_batch_ids": [
+          "BATCH-FT-004"
+        ],
+        "impacted_store_ids": [
+          "STORE-FT-001",
+          "STORE-FT-002",
+          "STORE-FT-003"
+        ],
+        "impacted_order_ids": [
+          "ORDER-FT-004"
+        ]
+      },
+      "claims": [
+        {
+          "metric": "impacted_product_count",
+          "value": 1,
+          "evidence_ids": [
+            "EVD-07c1891b91b92cf6"
+          ]
+        },
+        {
+          "metric": "impacted_batch_count",
+          "value": 1,
+          "evidence_ids": [
+            "EVD-07c1891b91b92cf6"
+          ]
+        },
+        {
+          "metric": "impacted_store_count",
+          "value": 3,
+          "evidence_ids": [
+            "EVD-d457e13c26441c50"
+          ]
+        },
+        {
+          "metric": "impacted_order_count",
+          "value": 1,
+          "evidence_ids": [
+            "EVD-d457e13c26441c50"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "EVD-052696eaab819b02",
+          "kind": "incident_notice",
+          "source": "incident_parser"
+        },
+        {
+          "evidence_id": "EVD-b976deecf5bd96b1",
+          "kind": "sop_procedure",
+          "source": "sop_repository"
+        },
+        {
+          "evidence_id": "EVD-07c1891b91b92cf6",
+          "kind": "graph_scope",
+          "source": "graph_repository"
+        },
+        {
+          "evidence_id": "EVD-d457e13c26441c50",
+          "kind": "order_exposure",
+          "source": "exposure_repository"
+        },
+        {
+          "evidence_id": "EVD-ffc74a5802ce4d12",
+          "kind": "consistency_review",
+          "source": "python"
+        },
+        {
+          "evidence_id": "EVD-c3199fb5c4d9e718",
+          "kind": "decision_gate",
+          "source": "python"
+        }
+      ],
+      "evidence_ids": [
+        "EVD-052696eaab819b02",
+        "EVD-07c1891b91b92cf6",
+        "EVD-b976deecf5bd96b1",
+        "EVD-c3199fb5c4d9e718",
+        "EVD-d457e13c26441c50",
+        "EVD-ffc74a5802ce4d12"
+      ],
+      "runtime_ms": 0.9063,
+      "passed": true
+    },
+    {
+      "case_id": "unaffected_negative",
+      "scenario": "unaffected_negative",
+      "scenario_tags": [
+        "unaffected_negative"
+      ],
+      "expected_gate": "HUMAN_REVIEW",
+      "actual_gate": "HUMAN_REVIEW",
+      "gate_reasons": [
+        "graph_scope:not_found",
+        "missing_evidence:consistency_review",
+        "missing_evidence:graph_scope",
+        "missing_evidence:order_exposure"
+      ],
+      "gold_scope": {
+        "impacted_product_ids": [],
+        "impacted_batch_ids": [],
+        "impacted_store_ids": [],
+        "impacted_order_ids": []
+      },
+      "actual_scope": {
+        "impacted_product_ids": [],
+        "impacted_batch_ids": [],
+        "impacted_store_ids": [],
+        "impacted_order_ids": []
+      },
+      "claims": [],
+      "evidence": [
+        {
+          "evidence_id": "EVD-aa5cdd9468abbd7d",
+          "kind": "incident_notice",
+          "source": "incident_parser"
+        },
+        {
+          "evidence_id": "EVD-b976deecf5bd96b1",
+          "kind": "sop_procedure",
+          "source": "sop_repository"
+        },
+        {
+          "evidence_id": "EVD-1312387b47323a26",
+          "kind": "decision_gate",
+          "source": "python"
+        }
+      ],
+      "evidence_ids": [
+        "EVD-1312387b47323a26",
+        "EVD-aa5cdd9468abbd7d",
+        "EVD-b976deecf5bd96b1"
+      ],
+      "runtime_ms": 0.3446,
+      "passed": true
+    },
+    {
+      "case_id": "missing_batch",
+      "scenario": "missing_batch",
+      "scenario_tags": [
+        "missing_batch"
+      ],
+      "expected_gate": "HUMAN_REVIEW",
+      "actual_gate": "HUMAN_REVIEW",
+      "gate_reasons": [
+        "graph_scope:not_found",
+        "missing_evidence:consistency_review",
+        "missing_evidence:graph_scope",
+        "missing_evidence:order_exposure"
+      ],
+      "gold_scope": {
+        "impacted_product_ids": [
+          "PRODUCT-FT-001",
+          "PRODUCT-FT-002"
+        ],
+        "impacted_batch_ids": [
+          "BATCH-FT-001",
+          "BATCH-FT-002",
+          "BATCH-FT-003"
+        ],
+        "impacted_store_ids": [
+          "STORE-FT-001",
+          "STORE-FT-002",
+          "STORE-FT-003"
+        ],
+        "impacted_order_ids": [
+          "ORDER-FT-001",
+          "ORDER-FT-002",
+          "ORDER-FT-003"
+        ]
+      },
+      "actual_scope": {
+        "impacted_product_ids": [],
+        "impacted_batch_ids": [],
+        "impacted_store_ids": [],
+        "impacted_order_ids": []
+      },
+      "claims": [],
+      "evidence": [
+        {
+          "evidence_id": "EVD-0ca4257e6a8af804",
+          "kind": "incident_notice",
+          "source": "incident_parser"
+        },
+        {
+          "evidence_id": "EVD-b976deecf5bd96b1",
+          "kind": "sop_procedure",
+          "source": "sop_repository"
+        },
+        {
+          "evidence_id": "EVD-4141bfdc68de0a41",
+          "kind": "decision_gate",
+          "source": "python"
+        }
+      ],
+      "evidence_ids": [
+        "EVD-0ca4257e6a8af804",
+        "EVD-4141bfdc68de0a41",
+        "EVD-b976deecf5bd96b1"
+      ],
+      "runtime_ms": 0.2759,
+      "passed": true
+    },
+    {
+      "case_id": "missing_graph_edge",
+      "scenario": "missing_edge",
+      "scenario_tags": [
+        "missing_edge"
+      ],
+      "expected_gate": "BLOCKED",
+      "actual_gate": "BLOCKED",
+      "gate_reasons": [
+        "graph_scope:invalid_dependency_response"
+      ],
+      "gold_scope": {
+        "impacted_product_ids": [
+          "PRODUCT-FT-001",
+          "PRODUCT-FT-002"
+        ],
+        "impacted_batch_ids": [
+          "BATCH-FT-001",
+          "BATCH-FT-002",
+          "BATCH-FT-003"
+        ],
+        "impacted_store_ids": [
+          "STORE-FT-001",
+          "STORE-FT-002",
+          "STORE-FT-003"
+        ],
+        "impacted_order_ids": [
+          "ORDER-FT-001",
+          "ORDER-FT-002",
+          "ORDER-FT-003"
+        ]
+      },
+      "actual_scope": {
+        "impacted_product_ids": [],
+        "impacted_batch_ids": [],
+        "impacted_store_ids": [],
+        "impacted_order_ids": []
+      },
+      "claims": [],
+      "evidence": [
+        {
+          "evidence_id": "EVD-7171f187c38e24ed",
+          "kind": "incident_notice",
+          "source": "incident_parser"
+        },
+        {
+          "evidence_id": "EVD-b976deecf5bd96b1",
+          "kind": "sop_procedure",
+          "source": "sop_repository"
+        },
+        {
+          "evidence_id": "EVD-1e474578684ce5df",
+          "kind": "decision_gate",
+          "source": "python"
+        }
+      ],
+      "evidence_ids": [
+        "EVD-1e474578684ce5df",
+        "EVD-7171f187c38e24ed",
+        "EVD-b976deecf5bd96b1"
+      ],
+      "runtime_ms": 0.2666,
+      "passed": true
+    },
+    {
+      "case_id": "graph_sql_mismatch",
+      "scenario": "graph_sql_mismatch",
+      "scenario_tags": [
+        "inconsistency"
+      ],
+      "expected_gate": "HUMAN_REVIEW",
+      "actual_gate": "HUMAN_REVIEW",
+      "gate_reasons": [
+        "graph_sql_batch_scope_mismatch"
+      ],
+      "gold_scope": {
+        "impacted_product_ids": [
+          "PRODUCT-FT-001",
+          "PRODUCT-FT-002"
+        ],
+        "impacted_batch_ids": [
+          "BATCH-FT-001",
+          "BATCH-FT-002",
+          "BATCH-FT-003"
+        ],
+        "impacted_store_ids": [
+          "STORE-FT-001",
+          "STORE-FT-002",
+          "STORE-FT-003"
+        ],
+        "impacted_order_ids": [
+          "ORDER-FT-001",
+          "ORDER-FT-002",
+          "ORDER-FT-003"
+        ]
+      },
+      "actual_scope": {
+        "impacted_product_ids": [
+          "PRODUCT-FT-001",
+          "PRODUCT-FT-002"
+        ],
+        "impacted_batch_ids": [
+          "BATCH-FT-001",
+          "BATCH-FT-002",
+          "BATCH-FT-003"
+        ],
+        "impacted_store_ids": [],
+        "impacted_order_ids": []
+      },
+      "claims": [
+        {
+          "metric": "impacted_product_count",
+          "value": 2,
+          "evidence_ids": [
+            "EVD-e47a3952d66bc191"
+          ]
+        },
+        {
+          "metric": "impacted_batch_count",
+          "value": 3,
+          "evidence_ids": [
+            "EVD-e47a3952d66bc191"
+          ]
+        },
+        {
+          "metric": "impacted_store_count",
+          "value": 0,
+          "evidence_ids": [
+            "EVD-0a692d04344f3116"
+          ]
+        },
+        {
+          "metric": "impacted_order_count",
+          "value": 0,
+          "evidence_ids": [
+            "EVD-0a692d04344f3116"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "EVD-f36e323fa294fa0d",
+          "kind": "incident_notice",
+          "source": "incident_parser"
+        },
+        {
+          "evidence_id": "EVD-b976deecf5bd96b1",
+          "kind": "sop_procedure",
+          "source": "sop_repository"
+        },
+        {
+          "evidence_id": "EVD-e47a3952d66bc191",
+          "kind": "graph_scope",
+          "source": "graph_repository"
+        },
+        {
+          "evidence_id": "EVD-0a692d04344f3116",
+          "kind": "order_exposure",
+          "source": "exposure_repository"
+        },
+        {
+          "evidence_id": "EVD-cef56738878b8530",
+          "kind": "consistency_review",
+          "source": "python"
+        },
+        {
+          "evidence_id": "EVD-f30d10deabfcb4fc",
+          "kind": "decision_gate",
+          "source": "python"
+        }
+      ],
+      "evidence_ids": [
+        "EVD-0a692d04344f3116",
+        "EVD-b976deecf5bd96b1",
+        "EVD-cef56738878b8530",
+        "EVD-e47a3952d66bc191",
+        "EVD-f30d10deabfcb4fc",
+        "EVD-f36e323fa294fa0d"
+      ],
+      "runtime_ms": 0.4943,
+      "passed": true
+    },
+    {
+      "case_id": "sql_dependency_failure",
+      "scenario": "sql_dependency_failure",
+      "scenario_tags": [
+        "sql_dependency_failure"
+      ],
+      "expected_gate": "BLOCKED",
+      "actual_gate": "BLOCKED",
+      "gate_reasons": [
+        "order_exposure:dependency_unavailable"
+      ],
+      "gold_scope": {
+        "impacted_product_ids": [
+          "PRODUCT-FT-001",
+          "PRODUCT-FT-002"
+        ],
+        "impacted_batch_ids": [
+          "BATCH-FT-001",
+          "BATCH-FT-002",
+          "BATCH-FT-003"
+        ],
+        "impacted_store_ids": [
+          "STORE-FT-001",
+          "STORE-FT-002",
+          "STORE-FT-003"
+        ],
+        "impacted_order_ids": [
+          "ORDER-FT-001",
+          "ORDER-FT-002",
+          "ORDER-FT-003"
+        ]
+      },
+      "actual_scope": {
+        "impacted_product_ids": [],
+        "impacted_batch_ids": [],
+        "impacted_store_ids": [],
+        "impacted_order_ids": []
+      },
+      "claims": [],
+      "evidence": [
+        {
+          "evidence_id": "EVD-71e620d7e2667184",
+          "kind": "incident_notice",
+          "source": "incident_parser"
+        },
+        {
+          "evidence_id": "EVD-b976deecf5bd96b1",
+          "kind": "sop_procedure",
+          "source": "sop_repository"
+        },
+        {
+          "evidence_id": "EVD-e47a3952d66bc191",
+          "kind": "graph_scope",
+          "source": "graph_repository"
+        },
+        {
+          "evidence_id": "EVD-3440ba74bdb7e312",
+          "kind": "decision_gate",
+          "source": "python"
+        }
+      ],
+      "evidence_ids": [
+        "EVD-3440ba74bdb7e312",
+        "EVD-71e620d7e2667184",
+        "EVD-b976deecf5bd96b1",
+        "EVD-e47a3952d66bc191"
+      ],
+      "runtime_ms": 0.4893,
+      "passed": true
+    },
+    {
+      "case_id": "sop_missing",
+      "scenario": "sop_missing",
+      "scenario_tags": [
+        "sop_missing"
+      ],
+      "expected_gate": "HUMAN_REVIEW",
+      "actual_gate": "HUMAN_REVIEW",
+      "gate_reasons": [
+        "sop_lookup:not_found"
+      ],
+      "gold_scope": {
+        "impacted_product_ids": [
+          "PRODUCT-FT-001",
+          "PRODUCT-FT-002"
+        ],
+        "impacted_batch_ids": [
+          "BATCH-FT-001",
+          "BATCH-FT-002",
+          "BATCH-FT-003"
+        ],
+        "impacted_store_ids": [
+          "STORE-FT-001",
+          "STORE-FT-002",
+          "STORE-FT-003"
+        ],
+        "impacted_order_ids": [
+          "ORDER-FT-001",
+          "ORDER-FT-002",
+          "ORDER-FT-003"
+        ]
+      },
+      "actual_scope": {
+        "impacted_product_ids": [
+          "PRODUCT-FT-001",
+          "PRODUCT-FT-002"
+        ],
+        "impacted_batch_ids": [
+          "BATCH-FT-001",
+          "BATCH-FT-002",
+          "BATCH-FT-003"
+        ],
+        "impacted_store_ids": [
+          "STORE-FT-001",
+          "STORE-FT-002",
+          "STORE-FT-003"
+        ],
+        "impacted_order_ids": [
+          "ORDER-FT-001",
+          "ORDER-FT-002",
+          "ORDER-FT-003"
+        ]
+      },
+      "claims": [
+        {
+          "metric": "impacted_product_count",
+          "value": 2,
+          "evidence_ids": [
+            "EVD-e47a3952d66bc191"
+          ]
+        },
+        {
+          "metric": "impacted_batch_count",
+          "value": 3,
+          "evidence_ids": [
+            "EVD-e47a3952d66bc191"
+          ]
+        },
+        {
+          "metric": "impacted_store_count",
+          "value": 3,
+          "evidence_ids": [
+            "EVD-9c02a21d7053fdb0"
+          ]
+        },
+        {
+          "metric": "impacted_order_count",
+          "value": 3,
+          "evidence_ids": [
+            "EVD-9c02a21d7053fdb0"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "EVD-756119c00cb03940",
+          "kind": "incident_notice",
+          "source": "incident_parser"
+        },
+        {
+          "evidence_id": "EVD-e47a3952d66bc191",
+          "kind": "graph_scope",
+          "source": "graph_repository"
+        },
+        {
+          "evidence_id": "EVD-9c02a21d7053fdb0",
+          "kind": "order_exposure",
+          "source": "exposure_repository"
+        },
+        {
+          "evidence_id": "EVD-68cb778eb6835ca6",
+          "kind": "consistency_review",
+          "source": "python"
+        },
+        {
+          "evidence_id": "EVD-1e50b8a824571e1a",
+          "kind": "decision_gate",
+          "source": "python"
+        }
+      ],
+      "evidence_ids": [
+        "EVD-1e50b8a824571e1a",
+        "EVD-68cb778eb6835ca6",
+        "EVD-756119c00cb03940",
+        "EVD-9c02a21d7053fdb0",
+        "EVD-e47a3952d66bc191"
+      ],
+      "runtime_ms": 0.7015,
+      "passed": true
+    },
+    {
+      "case_id": "scope_expansion",
+      "scenario": "scope_expansion",
+      "scenario_tags": [
+        "scope_expansion"
+      ],
+      "expected_gate": "HUMAN_REVIEW",
+      "actual_gate": "HUMAN_REVIEW",
+      "gate_reasons": [
+        "batch_scope_expanded:4>3",
+        "missing_evidence:consistency_review",
+        "missing_evidence:order_exposure"
+      ],
+      "gold_scope": {
+        "impacted_product_ids": [
+          "PRODUCT-FT-001",
+          "PRODUCT-FT-002"
+        ],
+        "impacted_batch_ids": [
+          "BATCH-FT-001",
+          "BATCH-FT-002",
+          "BATCH-FT-003"
+        ],
+        "impacted_store_ids": [
+          "STORE-FT-001",
+          "STORE-FT-002",
+          "STORE-FT-003"
+        ],
+        "impacted_order_ids": [
+          "ORDER-FT-001",
+          "ORDER-FT-002",
+          "ORDER-FT-003"
+        ]
+      },
+      "actual_scope": {
+        "impacted_product_ids": [],
+        "impacted_batch_ids": [],
+        "impacted_store_ids": [],
+        "impacted_order_ids": []
+      },
+      "claims": [],
+      "evidence": [
+        {
+          "evidence_id": "EVD-efc2b71f2b7aaca1",
+          "kind": "incident_notice",
+          "source": "incident_parser"
+        },
+        {
+          "evidence_id": "EVD-b976deecf5bd96b1",
+          "kind": "sop_procedure",
+          "source": "sop_repository"
+        },
+        {
+          "evidence_id": "EVD-a704ec3cf556d253",
+          "kind": "graph_scope",
+          "source": "graph_repository"
+        },
+        {
+          "evidence_id": "EVD-66514cf5ef7a6c84",
+          "kind": "decision_gate",
+          "source": "python"
+        }
+      ],
+      "evidence_ids": [
+        "EVD-66514cf5ef7a6c84",
+        "EVD-a704ec3cf556d253",
+        "EVD-b976deecf5bd96b1",
+        "EVD-efc2b71f2b7aaca1"
+      ],
+      "runtime_ms": 0.3231,
+      "passed": true
+    },
+    {
+      "case_id": "ungrounded_number",
+      "scenario": "ungrounded_number",
+      "scenario_tags": [
+        "ungrounded_number"
+      ],
+      "expected_gate": "HUMAN_REVIEW",
+      "actual_gate": "HUMAN_REVIEW",
+      "gate_reasons": [
+        "ungrounded_claim:impacted_order_count"
+      ],
+      "gold_scope": {
+        "impacted_product_ids": [
+          "PRODUCT-FT-001",
+          "PRODUCT-FT-002"
+        ],
+        "impacted_batch_ids": [
+          "BATCH-FT-001",
+          "BATCH-FT-002",
+          "BATCH-FT-003"
+        ],
+        "impacted_store_ids": [
+          "STORE-FT-001",
+          "STORE-FT-002",
+          "STORE-FT-003"
+        ],
+        "impacted_order_ids": [
+          "ORDER-FT-001",
+          "ORDER-FT-002",
+          "ORDER-FT-003"
+        ]
+      },
+      "actual_scope": {
+        "impacted_product_ids": [
+          "PRODUCT-FT-001",
+          "PRODUCT-FT-002"
+        ],
+        "impacted_batch_ids": [
+          "BATCH-FT-001",
+          "BATCH-FT-002",
+          "BATCH-FT-003"
+        ],
+        "impacted_store_ids": [
+          "STORE-FT-001",
+          "STORE-FT-002",
+          "STORE-FT-003"
+        ],
+        "impacted_order_ids": [
+          "ORDER-FT-001",
+          "ORDER-FT-002",
+          "ORDER-FT-003"
+        ]
+      },
+      "claims": [
+        {
+          "metric": "impacted_product_count",
+          "value": 2,
+          "evidence_ids": [
+            "EVD-e47a3952d66bc191"
+          ]
+        },
+        {
+          "metric": "impacted_batch_count",
+          "value": 3,
+          "evidence_ids": [
+            "EVD-e47a3952d66bc191"
+          ]
+        },
+        {
+          "metric": "impacted_store_count",
+          "value": 3,
+          "evidence_ids": [
+            "EVD-9c02a21d7053fdb0"
+          ]
+        },
+        {
+          "metric": "impacted_order_count",
+          "value": 3,
+          "evidence_ids": [
+            "EVD-9c02a21d7053fdb0"
+          ]
+        },
+        {
+          "metric": "impacted_order_count",
+          "value": 999,
+          "evidence_ids": [
+            "EVD-5881b8307556aa4c"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "evidence_id": "EVD-5881b8307556aa4c",
+          "kind": "incident_notice",
+          "source": "incident_parser"
+        },
+        {
+          "evidence_id": "EVD-b976deecf5bd96b1",
+          "kind": "sop_procedure",
+          "source": "sop_repository"
+        },
+        {
+          "evidence_id": "EVD-e47a3952d66bc191",
+          "kind": "graph_scope",
+          "source": "graph_repository"
+        },
+        {
+          "evidence_id": "EVD-9c02a21d7053fdb0",
+          "kind": "order_exposure",
+          "source": "exposure_repository"
+        },
+        {
+          "evidence_id": "EVD-68cb778eb6835ca6",
+          "kind": "consistency_review",
+          "source": "python"
+        },
+        {
+          "evidence_id": "EVD-54f3af3f6971f776",
+          "kind": "decision_gate",
+          "source": "python"
+        }
+      ],
+      "evidence_ids": [
+        "EVD-54f3af3f6971f776",
+        "EVD-5881b8307556aa4c",
+        "EVD-68cb778eb6835ca6",
+        "EVD-9c02a21d7053fdb0",
+        "EVD-b976deecf5bd96b1",
+        "EVD-e47a3952d66bc191"
+      ],
+      "runtime_ms": 0.8118,
+      "passed": true
+    },
+    {
+      "case_id": "unsafe_sql_scope_overflow",
+      "scenario": "unsafe_sql_scope_overflow",
+      "scenario_tags": [
+        "unsafe_sql"
+      ],
+      "expected_gate": "BLOCKED",
+      "actual_gate": "BLOCKED",
+      "gate_reasons": [
+        "order_exposure:dependency_unavailable"
+      ],
+      "gold_scope": {
+        "impacted_product_ids": [
+          "PRODUCT-FT-001",
+          "PRODUCT-FT-002"
+        ],
+        "impacted_batch_ids": [
+          "BATCH-FT-001",
+          "BATCH-FT-002",
+          "BATCH-FT-003"
+        ],
+        "impacted_store_ids": [
+          "STORE-FT-001",
+          "STORE-FT-002",
+          "STORE-FT-003"
+        ],
+        "impacted_order_ids": [
+          "ORDER-FT-001",
+          "ORDER-FT-002",
+          "ORDER-FT-003"
+        ]
+      },
+      "actual_scope": {
+        "impacted_product_ids": [],
+        "impacted_batch_ids": [],
+        "impacted_store_ids": [],
+        "impacted_order_ids": []
+      },
+      "claims": [],
+      "evidence": [
+        {
+          "evidence_id": "EVD-ea33e3eb5569b2e1",
+          "kind": "incident_notice",
+          "source": "incident_parser"
+        },
+        {
+          "evidence_id": "EVD-b976deecf5bd96b1",
+          "kind": "sop_procedure",
+          "source": "sop_repository"
+        },
+        {
+          "evidence_id": "EVD-3c0477a46f15a503",
+          "kind": "graph_scope",
+          "source": "graph_repository"
+        },
+        {
+          "evidence_id": "EVD-8bc998de1d891752",
+          "kind": "decision_gate",
+          "source": "python"
+        }
+      ],
+      "evidence_ids": [
+        "EVD-3c0477a46f15a503",
+        "EVD-8bc998de1d891752",
+        "EVD-b976deecf5bd96b1",
+        "EVD-ea33e3eb5569b2e1"
+      ],
+      "runtime_ms": 0.5961,
+      "passed": true
+    }
+  ]
+}

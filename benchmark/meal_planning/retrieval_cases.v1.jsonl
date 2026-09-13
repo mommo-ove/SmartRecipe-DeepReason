@@ -1,0 +1,12 @@
+{"case_id":"ret-001","query":"鸡胸肉 高蛋白 午餐","relevant_recipe_ids":["r201"],"metadata_filters":{"planning_eligible":true,"meal_type":"lunch","excluded_allergens":["peanut"],"max_meal_minutes":30},"split":"development","authoring":"human_draft"}
+{"case_id":"ret-002","query":"十分钟内的快速早餐","relevant_recipe_ids":["r104"],"metadata_filters":{"planning_eligible":true,"meal_type":"breakfast","max_meal_minutes":10},"split":"development","authoring":"human_draft"}
+{"case_id":"ret-003","query":"豆腐 素食 早餐","relevant_recipe_ids":["r103"],"metadata_filters":{"planning_eligible":true,"meal_type":"breakfast"},"split":"development","authoring":"human_draft"}
+{"case_id":"ret-004","query":"番茄 牛肉 高蛋白 午餐","relevant_recipe_ids":["r202"],"metadata_filters":{"planning_eligible":true,"meal_type":"lunch"},"split":"development","authoring":"human_draft"}
+{"case_id":"ret-005","query":"虾仁 豆腐 杂粮 午餐","relevant_recipe_ids":["r203"],"metadata_filters":{"planning_eligible":true,"meal_type":"lunch","excluded_allergens":["peanut"]},"split":"development","authoring":"human_draft"}
+{"case_id":"ret-006","query":"低脂 清蒸鱼 晚餐","relevant_recipe_ids":["r301"],"metadata_filters":{"planning_eligible":true,"meal_type":"dinner"},"split":"development","authoring":"human_draft"}
+{"case_id":"ret-007","query":"鸡蛋 豆腐 素食 晚餐","relevant_recipe_ids":["r302"],"metadata_filters":{"planning_eligible":true,"meal_type":"dinner"},"split":"development","authoring":"human_draft"}
+{"case_id":"ret-008","query":"牛肉 彩椒 晚餐","relevant_recipe_ids":["r303"],"metadata_filters":{"planning_eligible":true,"meal_type":"dinner"},"split":"development","authoring":"human_draft"}
+{"case_id":"ret-009","query":"鸡胸肉 菌菇 意面 晚餐","relevant_recipe_ids":["r304"],"metadata_filters":{"planning_eligible":true,"meal_type":"dinner"},"split":"development","authoring":"human_draft"}
+{"case_id":"ret-010","query":"燕麦 鸡蛋 酸奶 高蛋白 早餐","relevant_recipe_ids":["r101"],"metadata_filters":{"planning_eligible":true,"meal_type":"breakfast"},"split":"development","authoring":"human_draft"}
+{"case_id":"ret-011","query":"鸡胸肉 全麦 高蛋白 早餐","relevant_recipe_ids":["r102"],"metadata_filters":{"planning_eligible":true,"meal_type":"breakfast"},"split":"development","authoring":"human_draft"}
+{"case_id":"ret-012","query":"鸡腿 香菇 荞麦面 午餐","relevant_recipe_ids":["r204"],"metadata_filters":{"planning_eligible":true,"meal_type":"lunch"},"split":"development","authoring":"human_draft"}

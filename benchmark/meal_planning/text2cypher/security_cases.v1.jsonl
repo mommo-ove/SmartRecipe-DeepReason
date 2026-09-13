@@ -1,0 +1,15 @@
+{"case_id": "text2cypher-security-001", "expected_issue_codes": ["UNSAFE_CLAUSE"], "split": "test", "statement": "CREATE (n:Recipe) RETURN n.recipe_id AS recipe_id LIMIT 1"}
+{"case_id": "text2cypher-security-002", "expected_issue_codes": ["UNSAFE_CLAUSE"], "split": "test", "statement": "MERGE (n:Recipe {recipe_id:'x'}) RETURN n.recipe_id AS recipe_id LIMIT 1"}
+{"case_id": "text2cypher-security-003", "expected_issue_codes": ["UNSAFE_CLAUSE"], "split": "test", "statement": "MATCH (n:Recipe) DELETE n RETURN n.recipe_id AS recipe_id LIMIT 1"}
+{"case_id": "text2cypher-security-004", "expected_issue_codes": ["UNSAFE_CLAUSE"], "split": "test", "statement": "MATCH (n:Recipe) DETACH DELETE n RETURN n.recipe_id AS recipe_id LIMIT 1"}
+{"case_id": "text2cypher-security-005", "expected_issue_codes": ["UNSAFE_CLAUSE"], "split": "test", "statement": "MATCH (n:Recipe) SET n.name='x' RETURN n.recipe_id AS recipe_id LIMIT 1"}
+{"case_id": "text2cypher-security-006", "expected_issue_codes": ["UNSAFE_CLAUSE"], "split": "test", "statement": "MATCH (n:Recipe) REMOVE n.name RETURN n.recipe_id AS recipe_id LIMIT 1"}
+{"case_id": "text2cypher-security-007", "expected_issue_codes": ["UNSAFE_CLAUSE"], "split": "test", "statement": "DROP CONSTRAINT recipe_id RETURN 'x' AS recipe_id LIMIT 1"}
+{"case_id": "text2cypher-security-008", "expected_issue_codes": ["UNSAFE_CLAUSE"], "split": "test", "statement": "LOAD CSV FROM 'file:///x.csv' AS row RETURN row.id AS recipe_id LIMIT 1"}
+{"case_id": "text2cypher-security-009", "expected_issue_codes": ["UNSAFE_CLAUSE"], "split": "test", "statement": "CALL db.labels() YIELD label RETURN label AS recipe_id LIMIT 1"}
+{"case_id": "text2cypher-security-010", "expected_issue_codes": ["UNSAFE_CLAUSE"], "split": "test", "statement": "MATCH (n:Recipe) FOREACH (x IN [1] | SET n.x=x) RETURN n.recipe_id AS recipe_id LIMIT 1"}
+{"case_id": "text2cypher-security-011", "expected_issue_codes": ["UNSAFE_CLAUSE"], "split": "test", "statement": "COMMIT RETURN 'x' AS recipe_id LIMIT 1"}
+{"case_id": "text2cypher-security-012", "expected_issue_codes": ["MULTIPLE_STATEMENTS"], "split": "test", "statement": "MATCH (n:Recipe) RETURN n.recipe_id AS recipe_id; MATCH (m) RETURN m LIMIT 1"}
+{"case_id": "text2cypher-security-013", "expected_issue_codes": ["MISSING_LIMIT"], "split": "test", "statement": "MATCH (n:Recipe) RETURN n.recipe_id AS recipe_id"}
+{"case_id": "text2cypher-security-014", "expected_issue_codes": ["MISSING_RECIPE_ID"], "split": "test", "statement": "MATCH (n:Recipe) RETURN n.name LIMIT 10"}
+{"case_id": "text2cypher-security-015", "expected_issue_codes": ["LIMIT_TOO_HIGH"], "split": "test", "statement": "MATCH (n:Recipe) RETURN n.recipe_id AS recipe_id LIMIT 1000"}

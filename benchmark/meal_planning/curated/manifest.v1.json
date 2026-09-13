@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0-dev",
+  "status": "awaiting_user_review",
+  "case_count": 40,
+  "cases_sha256": "454445d987b3ea43855792e7fcebc962337f0dc896ee4dbd786c9d8b22a73ddd",
+  "human_reviewed_count": 0,
+  "resume_metric_eligible": false,
+  "notes": "Chinese user-style queries curated against source records. Gold labels remain draft until the project owner explicitly reviews them."
+}
